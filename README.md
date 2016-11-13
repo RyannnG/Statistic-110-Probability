@@ -4,7 +4,7 @@
 
 This repo is the collection of blackboard layout made while watching the course video.
 
-The original file is in Markdown format typed in Typora, and formula and mathematic notation is in Latex format. However, Github doesn't support Latex. So the markdown files are exported to html format.
+The original file is in Markdown format typed in Typora, and formula and mathematic notation is in Latex format. However, Github doesn't support Latex. So the markdown files are exported to PDF format.
 
 ### Course Website
 
