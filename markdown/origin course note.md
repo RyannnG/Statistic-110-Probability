@@ -75,7 +75,7 @@ Ex3 $ \binom{m+n}{k} = \sum_{j=0}^k \binom{m}{j} \binom{n}{k-j} $ (vander minde)
 
 probability sample consists of S and P, where S is sample space, and P , a function which takes an event A as input, returns P(A) and output. 
 
-such that 
+
 
 1. P() = 0, P(S) = 1
 2. P(UAn) = sum of P(An) if A1,A2..An are disjoint (not overlap)
@@ -84,11 +84,11 @@ such that
 
 **Birthday Problem**
 
-(Exclude Feb 29, assume 365 days equally likely, assume indep. of birth)
+(Exclude Feb 29, assume 365 days equally likely, assume independent of birth)
 
-k people , find prob. that two have same birthday 
+k people , find probability that two have same birthday 
 
-If k > 365, prob. is 1
+If k > 365, probability is 1
 
 50%-50% 
 
@@ -127,7 +127,7 @@ P(A1\cup …An) = n*1/n - n(n-1)/2 * 1/n(n-1) + …= 1 - 1/2! + 1/3! - 1/4! … 
 
   ## Lecture 4
 
-Define: Events A, B are indep. if $P(A\cap B) = P(A)P(B)$ 
+Define: Events A, B are independent if $P(A\cap B) = P(A)P(B)$ 
 
 Note: completely different form disjointness
 
@@ -151,7 +151,7 @@ P(A) = 1 - (5/6)^6^ ~ 0.665, P(B) = 1 - (5/6)^12^ - 12 *(1/6)(5/6)^11^    ~ 0.61
 
 $P(C) = 1 - \sum_{k=0}^2 \binom{18}{k} (1/6)^k (5/6)^(18-k)$  ~ 0.597
 
-**Conditional Probability** - How should you update prob./beliefs/uncertainty based on new evidence?
+**Conditional Probability** - How should you update probability/beliefs/uncertainty based on new evidence?
 
 > "Conditioning is the soul of statistic" 
 
@@ -215,17 +215,17 @@ want P(innocence |evidence)
 
 P(A|A) = 1
 
-3. confusing indep. with conditional indep. 
+3. confusing independent with conditional independent 
 
-   Definition: Events A,B are conditionally indep. given C if P(A\cap B|C) = P(A|C)P(B|C)
+   Definition: Events A,B are conditionally independent given C if P(A\cap B|C) = P(A|C)P(B|C)
 
    Does conditional indep given C imply indep? No
 
-   Ex. Chess opponent of unknown strength may be that game outcomes are conditionally indep. given strength
+   Ex. Chess opponent of unknown strength may be that game outcomes are conditionally independent given strength
 
-   Does indep. imply conditional indep. given C? No
+   Does independent imply conditional independent given C? No
 
-   Ex. A: Fire alarm goes off, cause by : F:fire; C:popcorn suppose F, C indep. But P(F|A, C^c^) = 1 not conditionally indep given A
+   Ex. A: Fire alarm goes off, cause by : F:fire; C:popcorn suppose F, C independent But P(F|A, C^c^) = 1 not conditionally indep given A
 
 
 
@@ -235,7 +235,7 @@ P(A|A) = 1
 
 1 door has car, 2 doors have goats, Monty knows which 
 
-Monty always open a goat door. If he has a choice , he picks with equal prob. Should you swich?
+Monty always open a goat door. If he has a choice , he picks with equal probability Should you swich?
 
 Note: if Monty opens door 2, we know door 2 has a goat, and Monty open ed door 2
 
@@ -281,7 +281,7 @@ C is a confounder
 
 Random walk: 
 
-p = prob. of going right,  absorbing states 0, N
+p = probability of going right,  absorbing states 0, N
 
 strategy: condition on first step
 
@@ -323,7 +323,7 @@ distribution is given by
 
 $P(X=k) = \binom{n}{k}p^k (1-p)^{n-k} $ 
 
-X ~ Bin(n,p), Y ~ Bin(m, p) indep.
+X ~ Bin(n,p), Y ~ Bin(m, p) independent
 
 Then X + Y ~ Bin(n + m, p) Proof consider n trials them m more trials
 
@@ -337,7 +337,7 @@ Bin(n, p)  X~Bin(n,p)
 
 2. sum of indicator : X=X1 + X2 +…+Xn, Xj = 1 if jth trial success ,0 otherwise   
 
-   i.i.d.Bern(q)  => indep. identically distributed
+   i.i.d.Bern(q)  => independent identically distributed
 
 3. **PMF** $P(X=k) = \binom{n}{k}p^k (1-p)^{n-k}$  
 
@@ -415,9 +415,9 @@ Peoperties of CDF
 
 This is "only if"
 
-**Indep. of r.v.s**
+**independent of r.v.s**
 
-X,Y are indep. r.v.s if P(X<=x, Y<=y) = P(X<= x)P(Y<=y) for all x, y
+X,Y are independent r.v.s if P(X<=x, Y<=y) = P(X<= x)P(Y<=y) for all x, y
 
 Discrete case : P(X=x, Y=y) = P(X=x)P(Y=y)
 
@@ -473,7 +473,7 @@ This gives expected value of any Hyoergeometric
 
 **Geometric **
 
-Geom(p) : indep. Bern(p) trials, count #failures before 1st success. let X~Geom(p) q = 1-p
+Geom(p) : independent Bern(p) trials, count #failures before 1st success. let X~Geom(p) q = 1-p
 
 PMF: $P(X=k) = q^k p$  valid since $\sum_{k=0}^{\infty} pq^k = p/1-q = 1$
 
@@ -503,7 +503,7 @@ E(X+Y) = E(2X) =2E(X)
 
 parameters r,p
 
-story: indep. Bern(p) trials #failures before the rth success
+story: independent Bern(p) trials #failures before the rth success
 
 PMF: $P(X=n) =   \binom{n+r-1}{r-1} p^r (1-p)^n$   
 
@@ -573,7 +573,7 @@ often used for applications where counting # of "successes" where ther are a lar
 
 Events A1, A2,..An, P(Aj) = pj, n large, pj's small
 
-events indep. or "weakly dependent"  
+events independent or "weakly dependent"  
 
 \# of  Aj's that occure is approx Pois(\lambda) \lambda = sum of pj
 
@@ -589,7 +589,7 @@ $E(triple matches) = \binom{n}{3}1/365^2$
 
 X = #triple matches  Approx Pois(\lambda) $\lambda = \binom{n}{3} 1/365^2$ 
 
-I123, I124 are not indep. 
+I123, I124 are not independent 
 
 P(X>=1) = 1 - P(X=0) ~ $1 - e^{-\lambda}$ 
 
@@ -647,7 +647,7 @@ Notation $EX^2 = E(X^2)$
 
 **Uniform** Unif(a,b)
 
-prob. length
+probability length
 
 f(x) = c, if a <= x <= b; 0, otherwise 
 
@@ -697,7 +697,7 @@ $1-U \sim Unif(0, 1)$ symmetry of Unif
 
 $a+bU$ is Unif on some interval. Nonlinear usually -> Non Unif. 
 
-**Indep. of r.v.s** X1,..Xn
+**independent of r.v.s** X1,..Xn
 
 Defn X1,…Xn indep if P(X1 <= x1, …Xn <= xn) = P(X1<=x1)…P(Xn<=xn)
 
@@ -751,7 +751,7 @@ $Var(X) \geq 0, Var(X) = 0$, if and only if P(X=a) = 0, for some a
 
 $Var(X +Y) \ne Var(X) + Var(Y)$  in general , Var not linear
 
-[equal if X,Y are indep.]
+[equal if X,Y are independent]
 
 $Var(X+X) = Var(2X) = 4Var(X)$ 
 
@@ -987,7 +987,7 @@ Let X have MGF M(t)
 
 2. MGF determines the distribution.  i.e. if X,Y have same MGF , then they have same CDF
 
-3. If X has MGF M_x, Y has MGF M_y, X indep. of Y, then MGF of X+Y is $E(e^{t(X+Y)}) = E(e^{tX})  + E(e^{tY})$ 
+3. If X has MGF M_x, Y has MGF M_y, X independent of Y, then MGF of X+Y is $E(e^{t(X+Y)}) = E(e^{tX})  + E(e^{tY})$ 
 
 Ex. $X\sim Bern(p)$, $M(t) = E(e^{tX}) = pe^t + q, q= 1-p$
 
@@ -1077,7 +1077,7 @@ Ex. 2D
 | X=1  | 2/6  | 1/6  | 3/6  |
 |      | 4/6  | 2/6  |      |
 
-They are indep. 
+They are independent 
 
 
 
@@ -1103,7 +1103,7 @@ $P((X,Y)\in B) = \iint_{B} f(x, y)dxdy$
 
 **independence**
 
-X,Y indep. if and only if $F(x,y) = F_X(x)F_Y(y)$ 
+X,Y independent if and only if $F(x,y) = F_X(x)F_Y(y)$ 
 
 Equiv. 
 
@@ -1123,7 +1123,7 @@ joint PDF const. on the square, 0 outside
 
 integral is area c = 1/area = 1
 
-marginal:  X,Y are indep. Unif(0,1)
+marginal:  X,Y are independent Unif(0,1)
 
 Ex Unif in disc $x^2 = y^2 \le 1$ 
 
@@ -1149,7 +1149,7 @@ conditional PDF of Y|X is
 
 $f_{Y|X}(y|x) = f_{X,Y}(x,y) / f_{X}(x)  = f_{X|Y}(x|y)f_{Y}(y)/f_{X}(x) $
 
-X, Y indep. if $f_{X,Y}(x,y) = f_X(x)f_Y(y)$ for all X,Y
+X, Y independent if $f_{X,Y}(x,y) = f_X(x)f_Y(y)$ for all X,Y
 
 
 
@@ -1165,7 +1165,7 @@ Theorm
 
 IF X,Y are indep, then E(XY) = E(X)E(Y)
 
-Indep. implies uncorrelated
+independent implies uncorrelated
 
 Proof (continuous case)
 
@@ -1193,7 +1193,7 @@ E(M+L)= E(X+Y) = E(M)+E(L) = 1
 
 **Chicken-egg**
 
-some hens some hatch some don't hatch, the eggs are indep.
+some hens some hatch some don't hatch, the eggs are independent
 
 N eggs,  $N \sim Pois(\lambda)$, each hatches prob p, indep, Let X = #hatch
 
@@ -1241,11 +1241,11 @@ generalization of binomial
 
 Defn/story of $Mult(n,\vec{p})$ , 
 
-$\vec{p} = (p_1,…p_k)$ prob. vector$ p_j \ge 0, \sum pj = 1$
+$\vec{p} = (p_1,…p_k)$ probability vector$ p_j \ge 0, \sum pj = 1$
 
 $\vec{X}\sim Mult(n, p), X = (X_1, … X_k)$ 
 
-have n objects indep. putting into k categories
+have n objects independent putting into k categories
 
 $P_j = P(category j)$ $X_j$ = #objects in category j
 
@@ -1341,7 +1341,7 @@ Property
 
 Therom 
 
-If X, Y are indep. then they're uncorrelated i.e Cov(X,Y) = 0
+If X, Y are independent then they're uncorrelated i.e Cov(X,Y) = 0
 
 Converse is false(common mistake) 
 
@@ -1475,7 +1475,7 @@ since $F_Y(t) = P(T\le t) = \int P(X+Y\le t|X=x)f_X(x)dx$
 
 $=\int F_Y(t-x)f_X(x)dx$
 
-Idea: prove existence of objects with desired properties A using prob.
+Idea: prove existence of objects with desired properties A using probability
 
 Show P(A) >0 for a random object . 
 
@@ -1591,7 +1591,7 @@ wait X time at bank to serve, $X\sim Gamma(a, \lambda)$
 
 at office $Y\sim Gamma(b, \lambda)$ 
 
-indep.
+independent
 
 Find joint distribution of $X+Y = T, \frac{X}{X+Y} = W$  
 
@@ -1613,7 +1613,7 @@ $f_W(w) = \int f_{T,W}(t,w)dt = \frac{\Gamma(a+b)}{\Gamma(a) \Gamma(b)} w^{a-1}(
 
 =>  know normalizing const. of  Beta(a,b)
 
-$T\sim Gamma(a+b, 1), W\sim Beta(a,b)$  are indep. 
+$T\sim Gamma(a+b, 1), W\sim Beta(a,b)$  are independent 
 
 Find E(W), W\sim Beta(a,b)
 
@@ -1622,7 +1622,7 @@ Find E(W), W\sim Beta(a,b)
 
 Why is  E(X/(X+Y))E(X+Y) = E(X) in this special problem of Gamma-Beta?
 
-X/(X+Y) is indep. of X+Y => uncorrelated
+X/(X+Y) is independent of X+Y => uncorrelated
 
 **Order Statistcs**
 
@@ -1888,7 +1888,7 @@ let X_1,X_2… be i.i.d mean \mu, var \sigma^2,  let $\overline{X_n} = 1/n \sum_
 
 (strong)Law of Large Numbers: $\overline{X_n} $ -> \mu as n-> \infty with probability 1
 
-Ex. $X_j \sim Bern(p)$ , then X_1 + ..X_n /n -> p with prob. 1
+Ex. $X_j \sim Bern(p)$ , then X_1 + ..X_n /n -> p with probability 1
 
 (weak) LLN For c >0, $P(|\overline{X_n} - \mu| >c) -> 0$  as n-> \infty
 
@@ -1898,7 +1898,7 @@ proof weak
 
 $P(|\overline{X_n} - \mu| >c) \le VarX_n^-/c^2 1/n^2 n \sigma^2 /c^2 = \sigma^2/nc^2 ->0$  
 
-$X_n^- - \mu -> 0$  with prob. 1, but what does the distribution of X_n^- look like ?
+$X_n^- - \mu -> 0$  with probability 1, but what does the distribution of X_n^- look like ?
 
 Central limit Therom:  $n^{1/2}(X_n^- - \mu)/\sigma$ -> N(0,1) in distribution
 
@@ -1944,7 +1944,7 @@ So $\chi^2(n)$ is $Gamma(n/2, 1/2)$
 
 **Student - t** (Gosset, 1908)
 
-Let $T = \frac{Z}{\sqrt{V/n}}$ , with $Z\sim N(0,1) ,V\sim \chi^2(n)$ indep.
+Let $T = \frac{Z}{\sqrt{V/n}}$ , with $Z\sim N(0,1) ,V\sim \chi^2(n)$ independent
 
 Then $T\sim t_n$  
 
@@ -1968,13 +1968,13 @@ Another way:
 
 $E(Z^{2n})=E((Z^2)^n), Z^2 = \chi^2(1) \sim Gamma(1/2, 1/2)$
 
-Let $T_n = \frac{Z}{\sqrt{V/n}}$ , with $Z\sim N(0,1) ,$ indep.
+Let $T_n = \frac{Z}{\sqrt{V/n}}$ , with $Z\sim N(0,1) ,$ independent
 
 $ V_n=Z_1^2 + Z_2^2 +..+Z_N^2$
 
-Then $V_n/n \to 1$ with prob. 2 by LLN since $EZ_1^2 = 1$
+Then $V_n/n \to 1$ with probability 2 by LLN since $EZ_1^2 = 1$
 
-so $T_n \to Z$  with prob. 1 So $t_n$ converges to N(0,1)
+so $T_n \to Z$  with probability 1 So $t_n$ converges to N(0,1)
 
 **Multivariate Normal** (MVN)
 
@@ -1986,7 +1986,7 @@ since s(Z+2W) + t(3Z+5W) = (s+3t)Z+(2s+5t)W is Normal
 
 Non-Ex.
 
- Z\sim N(0,1), let S be random indep. of Z, then Z, SZ are marginally N(0,1), But (Z,SZ) is not Normal. look at Z+SZ 
+ Z\sim N(0,1), let S be random independent of Z, then Z, SZ are marginally N(0,1), But (Z,SZ) is not Normal. look at Z+SZ 
 
 Let $EX_j = \mu_j$, MGF of $\vec{X}$ (MVN) is $E(e^{\vec{t}'\vec{X}})  = E(e^{t_1X_1+t_2X_2+…+t_kX_k})$
 
@@ -1994,13 +1994,13 @@ $= exp((t_1\mu_1+..+t_k\mu_k)+1/2\times Var(t_1X_1+t_2X_2+…+t_kX_k))$
 
 Theorm: within MVN, uncorrlated implies indep
 
-$\vec{X} = \binom{\vec{X_1}}{\vec{X_2}}$ MVN, id every component of $\vec{X_1}$ is uncorrlated with every component of $\vec{X_2}$,then $X_1$ is indep. of $X_2$ 
+$\vec{X} = \binom{\vec{X_1}}{\vec{X_2}}$ MVN, id every component of $\vec{X_1}$ is uncorrlated with every component of $\vec{X_2}$,then $X_1$ is independent of $X_2$ 
 
 Ex. Let X,Y be i.i.d N(0,1) Then (X+Y, X-Y) is MVN, 
 
 uncorr: $Cov(X+Y, X-Y) = Var(X) + Cov(X,Y)-Cov(X,Y)-Var(Y) = 0$ 
 
-So X+Y, X-Y are indep.
+So X+Y, X-Y are independent
 
 ## Lecture 31
 
