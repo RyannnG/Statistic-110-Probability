@@ -82,190 +82,256 @@ probability sample consists of S and P, where S is sample space, and P , a funct
 
 ## Lecture 3
 
-**Birthday Problem**
+### [Birthday Problem](https://en.wikipedia.org/wiki/Birthday_problem)
 
-(Exclude Feb 29, assume 365 days equally likely, assume independent of birth)
+(Exclude Feb 29, assume 365 days equally likely, assume indep. of birth)
 
-k people , find probability that two have same birthday 
+k people , find prob. that two have same birthday 
 
-If k > 365, probability is 1
-
-50%-50% 
+If k > 365, prob. is 1
 
 Let k <= 365, $P(no  match) =\frac{ 365 * 364 *... (365 - k + 1) }{365^k}$ 
 
 P(match) ~ 50.7%, if k = 23; 97% if k = 50; 99.9999%, if k = 100
 
-$\binom{k}{2} =  $       $\binom{23}{2} = 253$ 
+$\binom{k}{2} =  \frac{k(k-1)}{2} $  $\binom{23}{2} = 253$ 
+
+### Properties of Probability
+
+1. $P(A^c) = 1 - P(A)$    
+2. If $A \subseteq B$ , then $P(A) \subseteq P(B)$ 
+3. $P(A\cup B) = P(A) + P(B) - P(A\cap B)$
+
+$P(A\cup B\cup C) = P(A) + P(B) + P(C) - P(A\cap B) - P(A\cap C) - P(B\cap C) + P(A\cap B\cap C)$ 
+
+**Proof:**
+
+1. $1 = P(S) = P(A\cap A^c) = P(A) + P(A^c)$
+2. $B = A\cup(B\cap A^c)$  $P(B) = P(A)+P(B\cap A^c)$ 
+3. $P(A\cup B) = P(A\cap (B\cap A^c)) = P(A) + P(B\cap A^c)$ 
+
+General case: 
 
 
 
-**Properties of Probability**
+### deMontmort's Problem(1713)
 
-1. P(A^*^) = 1 - P(A)    Proof: 1 = P(S) = P(AUA^*^) = P(A) + P(A^*^) 
-2. If $A \subseteq B$ , then $P(A) \subseteq P(B)$ , Proof: $B = A\cup(B\cap A^*)$
+**[matching problem](http://www.math.uah.edu/stat/urn/Matching.html)** 
 
-$P(B) = P(A)+P(B\cap A^*)$ 
+n cards labeled 1 to n, flipping cards over one by one, you win if the card that you name is the card that appears.
 
-3. $P(A\cup B) = P(A) + P(B) - P(A\cap B)$, Proof: $P(A\cup B) = P(A\cap (B\cap A^*)) = P(A) + P(B\cap A^*)$ 
+ Let $A_j$  be the event, ''jth card matches" 
 
-$P(A\cup B\cup C) = P(A) + P(B) + P(C) - P(A\cap B) - P(A\cap C) - P(B\cap C) + P(A\cap B\cap C)$ general case: 
+$P(A_j) = 1 / n $ since all position equally likely for card labeled j
 
-deMortmort's Problem(1713), matching problem 
-
-n cards labeled 1,2…n, let Aj be the event, ''jth card
-
-P(Aj) = 1 / n since all position equally likely for card labeled j
-
-P(A1\cap A2) = (n-2)! / n! = 1/n(n-1)
+$P(A_1\cap A_2) = (n-2)! / n! = 1/n(n-1)$ 
 
 ...
 
-P(A1\cap … Ak) = (n-k)! / n!
+$P(A_1\cap … A_k) = (n-k)! / n!$ 
 
-P(A1\cup …An) = n*1/n - n(n-1)/2 * 1/n(n-1) + …= 1 - 1/2! + 1/3! - 1/4! … (-1)^n^ 1/n! ~ 1- 1/e
+$P(A_1\cup …A_n) = n*1/n - n(n-1)/2 * 1/n(n-1) + …$
+
+$= 1 - 1/2! + 1/3! - 1/4! … (-1)^n1/n!$ $\approx 1- 1/e$ 
 
   ## Lecture 4
 
-Define: Events A, B are independent if $P(A\cap B) = P(A)P(B)$ 
+Definition:** Events A, B are independent if $P(A\cap B) = P(A)P(B)$ 
 
 Note: completely different form disjointness
 
-A, B, C are indep, if P(A, B) = P(A)P(B), P(A,C) = P(A)P(C), P(B,C) = P(B)P(C) and P(A, B, C) = P(A)P(B)P(C)
+$A, B, C$ are independent, if $P(A, B) = P(A)P(B)$, $P(A,C) = P(A)P(C)$, $P(B,C) = P(B)P(C)$ and $P(A, B, C) = P(A)P(B)P(C)$
 
 Similarly for events A1,…An
 
-Newton-Pepys Problem(1693)
+### Newton-Pepys Problem(1693)
 
-Have fair dice; which is most likely?
+> The **Newton–Pepys problem** is a [probability](https://en.wikipedia.org/wiki/Probability) problem concerning the probability of throwing sixes from a certain number of dice.
+>
+> In 1693 [Samuel Pepys](https://en.wikipedia.org/wiki/Samuel_Pepys) and [Isaac Newton](https://en.wikipedia.org/wiki/Isaac_Newton) corresponded over a problem posed by Pepys in relation to a [wager](https://en.wikipedia.org/wiki/Gambling) he planned to make. The problem was:
+>
+>
+> *A. Six fair dice are tossed independently and at least one “6” appears.*
+>
+> *B. Twelve fair dice are tossed independently and at least two “6”s appear.*
+>
+> *C. Eighteen fair dice are tossed independently and at least three “6”s appear.*
+>
+> Pepys initially thought that outcome C had the highest probability, but Newton correctly concluded that outcome A actually has the highest probability.
+>
+> Quoted from Wikipedia : [Newton–Pepys problem](https://en.wikipedia.org/wiki/Newton%E2%80%93Pepys_problem)
 
-(A) at least one 6 with 6 dice < - [ ] answer
+**Answer:**
 
-(B) at least two 6 with 12 dice
+$P(A) = 1 - (5/6)^6 \approx 0.665$
 
-(C) at least three 6 with 18 dice < Pepys believe
+$P(B) = 1 - (5/6)^{12} - 12 *(1/6)(5/6)^{11}  \approx  0.619$ 
 
-at least — union
+$P(C) = 1 - \sum_{k=0}^2 \binom{18}{k} (1/6)^k (5/6)^{(18-k)}  \approx 0.597$ 
 
-P(A) = 1 - (5/6)^6^ ~ 0.665, P(B) = 1 - (5/6)^12^ - 12 *(1/6)(5/6)^11^    ~ 0.619
+### Conditional Probability 条件概率
 
-$P(C) = 1 - \sum_{k=0}^2 \binom{18}{k} (1/6)^k (5/6)^(18-k)$  ~ 0.597
-
-**Conditional Probability** - How should you update probability/beliefs/uncertainty based on new evidence?
+— How should you update probability/beliefs/uncertainty based on new evidence?
 
 > "Conditioning is the soul of statistic" 
 
-Define: $P(A|B) = P(A\cap B) / P(B)$, if P(B) > 0
+#### Definition:
 
-Intuition 1: pebble world 9 pebbles , total mass is 1. P(A|B):get rid of pebbles in B^*^ , renormalize to make total mass again
+$$P(A|B) = \frac{P(A\cap B)} {P(B)}$$, if $P(B) > 0$
 
-Intuition 2: frequentist world: repeat ecperiment many times
+#### Intuition: 
 
-100101101 001001011 11111111 
+1. Pebble world , there are finite possible outcomes, each one is represented as a pebble. For example, 9 outcomes, that is 9 pebbles , total mass is 1. B: four pebbles, $P(A|B)$:get rid of pebbles in $B^c$ , renormalize to make total mass again
 
-circle reps where B occurred ; among those , what fraction of time did A also occur?
+2. Frequentist world: repeat experiment many times
 
-**Theorem** 
+   (100101101) 001001011 11111111 
+
+    circle repeatitions where B occurred ; among those , what fraction of time did A also occur?
+
+### Theorem
 
 1. $P(A\cap B) = P(B)P(A|B) = P(A)P(B|A)$
-2. P(A1…An) = P(A1)P(A2|A1)P(A3|A1,A2)…P(An|A1,A2…An-1)
-3. $P(A|B) = \frac{P(B|A)P(A)}{P(B)}$ 
+2. $P(A_1…A_n) = P(A_1)P(A_2|A_1)P(A_3|A_1,A_2)…P(A_n|A_1,A_2…A_{n-1})$
+3. $$P(A|B) = \frac{P(B|A)P(A)}{P(B)}$$ 
 
 ## Lecture 5
 
 **Thinking** conditionally is a condition for thinking
 
-How to solve a problem?
+**How to solve a problem?**
 
 1. Try simple and extreme cases
 
 2. Break up problem into simple pieces 
 
-   P(B) = P(B|A1)P(A1) + P(B|A2)P(A2) +…P(B|An)P(An)
+   $P(B) = P(B|A_1)P(A_1) + P(B|A_2)P(A_2) +…P(B|A_n)P(A_n)$
 
    law of total probability 
 
-Ex get random 2 cards hand form standard deck
+   ​
 
-Find P(both aces|have ace), P(both aces|have ace of spade)
+<u>Example 1</u> 
 
-P(both aces|have ace) = P(both aces,~~have ace~~) / P(have ace) = (4,2)/(52, 2)/1 - (48, 2)/(52, 2) = 1/33
+Suppose we have 2 random cards from standard deck
 
-P(both aces|have ace of spade) = 3/51 = 1/17 
+Find $P(both\  aces|have\ ace)$, $P(both\ aces|have\ ace\ of\ spade)$
 
-Patient get tested for disease afflicts 1% of population, tests positve 
+$$P(both\ aces|have\ ace) = P(both\ aces,\cancel{have\ ace}) / P(have\ ace) =  \frac{\binom{4}{2}/\binom{52}{2}}{1-\binom{48}{2}/\binom{52}{2}} = 1/33$$
 
-Suppose test advertised as 95% accurate , suppose this mean 
+$P(both\ aces|have\ ace\ of\ spade) = 3/51 = 1/17 $ 
 
-D: has disease T: test positive
+<u>Example 2</u> 
+
+Patient get tested for disease afflicts 1% of population, tests positve (has disease)
+
+Suppose the test is advertised as "95% accurate" , suppose this means 
+
+$D$: has disease, $T$: test positive
+
+Trade-off: It's rare that the test is wrong, it's also rare the disease is rare
 
 $P(T|D) = 0.95 = P(T^c |D^c)$
 
-$P(D|T) = \frac{P(T|D)P(D)}{P(T)} = \frac{P(T|D)P(D)}{(P(T|D)P(D) + P(T|D^c)P(D^c)}$  
+$$P(D|T) = \frac{P(T|D)P(D)}{P(T)} = \frac{P(T|D)P(D)}{P(T|D)P(D) + P(T|D^c)P(D^c}$$  
 
-Biohazards
 
-1. confusing P(A|B), P(B|A)  (procecutor's fallacy) 
 
-<u>Ex</u> Sally Clark case, SIDS
+### Biohazards
+
+1. confusing $P(A|B)$, $P(B|A)$  ([procecutor's fallacy](https://en.wikipedia.org/wiki/Prosecutor%27s_fallacy)) 
+
+<u>Ex</u> [Sally Clark](https://en.wikipedia.org/wiki/Sally_Clark) case, SIDS
 
 want P(innocence |evidence) 
 
-2. confusing P(A) - prior with P(A|B) - posterior 
+2. confusing $P(A) - prior先验$ with $P(A|B) - posterior 后验$
 
 P(A|A) = 1
 
 3. confusing independent with conditional independent 
 
-   Definition: Events A,B are conditionally independent given C if P(A\cap B|C) = P(A|C)P(B|C)
 
-   Does conditional indep given C imply indep? No
 
-   Ex. Chess opponent of unknown strength may be that game outcomes are conditionally independent given strength
 
-   Does independent imply conditional independent given C? No
+**Definition**:
 
-   Ex. A: Fire alarm goes off, cause by : F:fire; C:popcorn suppose F, C independent But P(F|A, C^c^) = 1 not conditionally indep given A
+ 	Events $A,B$ are conditionally independent given $C$ if $P(A\cap B|C) = P(A|C)P(B|C)$
+
+**Q:**Does conditional indep given C imply indep. ? No
+
+Ex. Chess opponent of unknown strength may be that game outcomes are conditionally independent given strength 
+
+**Q:**Does independent imply conditional independent given C? No
+
+Ex. A: Fire alarm goes off, cause by : F:fire; C:popcorn. suppose F, C independent But P(F|A, C^c^) = 1 not conditionally indep given A
+
+
+
+### Recommendations 推荐书籍
+
+_Statistical science in the courtroom_ 
+
+_Statistics for lawyers_
+
 
 
 
 ## Lecture 6
 
-**Monty Hall**
+### Monty Hall
 
-1 door has car, 2 doors have goats, Monty knows which 
+> Suppose you're on a game show, and you're given the choice of three doors: Behind one door is a car; behind the others, goats. You pick a door, say No. 1, and the host, who knows what's behind the doors, opens another door, say No. 3, which has a goat. He then says to you, "Do you want to pick door No. 2?" Is it to your advantage to switch your choice?
+>
+> From Wikipedia [Monty Hall problem](https://en.wikipedia.org/wiki/Monty_Hall_problem)
 
-Monty always open a goat door. If he has a choice , he picks with equal probability Should you swich?
+1 door has car, 2 doors have goats, Monty knows which door has car.
 
-Note: if Monty opens door 2, we know door 2 has a goat, and Monty open ed door 2
+Monty always open a goat door. If he has a choice , he picks with equal probability.  Should you switch?
 
-LOTP:
+Note: if Monty opens door 2, we know door 2 has a goat, and Monty opened door 2
 
-wish we kenw where the car is
+**LOTP: Law of Total Probability**
 
-S: succeed (assuming switch)
+wish we knew where the car is
 
-Dj = Door j has car (j = 1, 2, 3)
+$S$ : succeed (assuming switch)
 
-P(S) = P(S|D1) 1/3 + P(S|D2) 1/3 + P(S|D3) /3
+$D_j$ = Door j has car (j = 1, 2, 3)
 
-= 0 + 1 * 1/3 = 1* 1/ 3 = 2/3
+You choose door 1 and the host opens door 3
+
+$P(S) = P(S|D_1)\frac{1}{3}+ P(S|D_2) \frac{1}{3} + P(S|D_3) \frac{1}{3}$
+
+$= 0 + 1 * \frac{1}{3}+ 1* \frac{1}{3} =\frac{2}{3}$
 
 By symmetry P(S|Monty opens 2) = 2/3
 
-**Simpson's Paradox**
+### Simpson's Paradox
 
-A: successful surgery
+| Dr.Hibbert | heart | bandaid |
+| ---------- | ----- | ------- |
+| success    | 70    | 10      |
+| failure    | 20    | 0       |
 
-B: treated by Nick
+| Dr.Nick | heart | bandaid |
+| ------- | ----- | ------- |
+| success | 2     | 81      |
+| failure | 8     | 9       |
 
-C: heart surgery
 
-P(A|B, C)  < P(A|B^c^,C)
 
-P(A|B, C^c^) < P(A|B^c^, C^c^)
+$A$: successful surgery
 
-P(A|B) > P(A|B^c^)
+$B$: treated by Nick
+
+$C$: heart surgery
+
+$P(A|B) = 81\% > P(A|B^c) = 80\%$ 
+
+$P(A|B, C)  < P(A|B^c,C)$
+
+$P(A|B, C^c) < P(A|B^c, C^c)$
 
 C is a confounder
 
