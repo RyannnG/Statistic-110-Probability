@@ -341,101 +341,129 @@ C is a confounder
 >
 > Random variables and their distribution 
 
-**Gambler's Ruin**
+### Gambler's Ruin
+
+Two gamblers, A and B, sequence of rounds bet \$1
+
+$p=P(A\ wins\ a\ certain\ round), q = 1-p$, the game goes until one bankrupt
+
+what's the probability that A wins entire gmae(so B is "ruined")?
+
+**Assume:** A start with $\$i$, B starts with $\$(N-i)$ 
 
 
 
-Random walk: 
+​	**Random walk:** 
 
-p = probability of going right,  absorbing states 0, N
+​	A particle in the i position, move right 1 step or left 1 step 
 
-strategy: condition on first step
+​	$p$ = probability of going right.  Absorbing states: reach 0 or N
 
-let Pi = (A wins game | A start with i dollars)
 
-P~i~ = pp~i~+1 + qp~i-1~, 1 <= i <= N-1
+
+A either wins the 1st round or lose it 
+
+**Strategy:** condition on first step
+
+
+
+Let $P_i = (A\ wins\ game | A\ start\ at\ \$i)$
+
+$P_i = pp_{i+1} + qp_{i-1}, 1 \le i \le N-1$
 
 (difference equation)
 
-Guess P~i~ = X^i^ 
+$P_0 = 0, P_N = 1$  (boundary)
 
-X^i^ = px^i+1^ + qx^i-1^ 
+**Solve difference equation**
 
-px^2^ - x + q = 0
+Guess $P_i = x^i$
 
-x = {1, q/p}
+$x^i = px^{i+1} + qx^{i-1} $
 
-p~i~ = AI^i^ + B(q/p)^i^
+$px^2 - x + q = 0$
 
-p~0~ = 0, B = -A, P~n~ = 1=> 1 = A(1-q/p)^n^ 
+$x = \{1, q/p\}$
 
-**Random Variable**
+$p_i = A1^i + B(q/p)^i$
+
+$p_0 = 0, B = -A, P_n = 1\Rightarrow 1 = A(1-q/p)^n $  
+
+$P_i = \frac{1-(q/p)^i}{1-(q/p)^N}, if\ p \ne q$  
+
+$P_i = i/N, if\ p=q$  
+
+### Random Variable
 
 It's a function from sample space S to R
 
-thnk of a as numerical "summary" of an aspect of the experiment.
+think of a as numerical "summary" of an aspect of the experiment.
 
-**Bernoulli**
+### Bernoulli
 
-X is said to have Bern Distri. if X has only 2 possible  values , 0 and 1,
+X is said to have Bern Distribution, if X has only 2 possible values , 0 and 1.
 
-P(X=1) = p, P(X=0) = 1 - p. X = 1 is an event S:X(S) = 1
+$P(X=1) = p, P(X=0) = 1 - p$.  
 
-**Binomial (n,p) **
+X = 1 is an event S:X(S) = 1
 
-The distribution of #success X in n indep Bern(p) trials is called Bin(n, p) its 
+### Binomial (n,p)
 
-distribution is given by 
+The distribution of #success X in n indep Bern(p) trials is called Bin(n, p) 
+
+its distribution is given by 
 
 $P(X=k) = \binom{n}{k}p^k (1-p)^{n-k} $ 
 
-X ~ Bin(n,p), Y ~ Bin(m, p) independent
+$X \sim Bin(n,p)$, $Y \sim Bin(m, p)$ independent
 
-Then X + Y ~ Bin(n + m, p) Proof consider n trials them m more trials
+Then $X + Y \sim Bin(n + m, p)$ 
+
+ Proof:  consider n trials then m more trials
 
 ## Lecture 8
 
-**Binnomial Distribution**
+### Binomial Distribution
 
-Bin(n, p)  X~Bin(n,p)
+$ X\sim Bin(n,p)$ 
 
 1. Story: X is #sucess in n **independent** Bern(p) trials
 
-2. sum of indicator : X=X1 + X2 +…+Xn, Xj = 1 if jth trial success ,0 otherwise   
+2. sum of indicator : $X=X_1 + X_2 +…+X_n$;  
+
+   $X_j = 1$ if jth trial success, 0 otherwise   
 
    i.i.d.Bern(q)  => independent identically distributed
 
 3. **PMF** $P(X=k) = \binom{n}{k}p^k (1-p)^{n-k}$  
 
-**PMF -Probabilty Mass Function**
 
-**R.V** random variable
 
-X = 7 is an event
+#### CDF
 
-**CDF** 
+$X\le x$ is an event
 
-X<= x is an event
-
-F(x) = P(X<=x)
+$F(x) = P(X\le x)$
 
 then F is the CDF of X (**cummulative distribution function**) 
 
 **PMF**(for discrete  r.v.s)  
 
-Discrete: possible values a1, a2, …an could be listed out
+Discrete: possible values $a_1, a_2, …,a_n$ could be listed out
 
-P(X=aj) for all j = pj
+$P(X=a_j)$ for all $j = p_j$
 
-pj >= 0, sum of all pj = 1
+$p_j \ge 0$, $\sum p_j = 1$  
 
 
 
-X~Bin(n,p), Y~Bin(m,p) => X+Y ~Bin(n+m, p)
+$X\sim Bin(n,p), Y\sim Bin(m,p) \Rightarrow X+Y \sim Bin(n+m, p)$
 
-1. immediate form story
+**Proof:**
 
-2. X = x1 +…+ xn, Y = y1 +…+ yn => X+Y = sum of xs + sum of ys
+1. immediate from story
+
+2. $X = x_1 +…+ x_n, Y = y_1 +…+ y_m \Rightarrow X+Y = \sum x + \sum y$
 
    sum of n+m i.i.d Bern(p) => Bern
 
@@ -447,67 +475,86 @@ X~Bin(n,p), Y~Bin(m,p) => X+Y ~Bin(n+m, p)
 
    $=p^k q^{m+n-k} \sum_{j=0}^k \binom{m}{k-j} \binom{n}{j}$ 
 
-   VanderMorde $\sum_{j=0}^k \binom{m}{k-j} \binom{n}{j} = \binom{m+n}{k}$
+   VanderMonde $\sum_{j=0}^k \binom{m}{k-j} \binom{n}{j} = \binom{m+n}{k}$
 
    convolution
 
-Ex. 5 card hand find distribution of #aces  - PMF(or CDF)
+<u>Ex.</u> 5 card hand find distribution of #aces  - PMF(or CDF)
 
-let X = (#aces)  find P(X=k),  Not Binomial .  Like the elk problem
+let X = (#aces)  find $P(X=k)$, 
 
-**Hypergeometric**
+$$P(X=k) = \frac{\binom{4}{k} \binom{48}{5-k}}{\binom{52}{5}}, for\ k \in \{0,1,2,3,4\}$$
 
-Have b black, w white marbles. Pick simple random sample of size n. Find list. of (#write marbles in sample) = X
+ <u>Not</u> Binomial.  Like the elk problem(homework)
 
-$$P(X=k) =\frac{\binom{w}{k} \binom{b}{n-k}}{\binom{w+b}{n}}$$ **Hypergeometric** sampling without replace 
+### Hypergeometric
+
+**Story:** Have b black, w white marbles. Pick simple random sample of size n. 
+
+Find distribution of (# white marbles in sample) = X
+
+$$P(X=k) =\frac{\binom{w}{k} \binom{b}{n-k}}{\binom{w+b}{n}}, 0\le k\le w, 0\le n-k \le b$$ 
+
+**Hypergeometric** sampling without replace 
 
 $$\frac{1}{\binom{w+b}{n}} \sum_{k=0}^w \binom{w}{k} \binom{b}{n-k} = 1$$  
 
-CDF P(X<=x)
+
+
+CDF $P(X\le x)$ 
 
 ## Lecture 9
 
-**CDF**
+### CDF
 
-F(x) = P(X<=x), as a function of real x
+$F(x) = P(X\le x)$ ,  as a function of real $x$
 
-P(a<X<b) = F(b) - F(a)
+$P(a<X<b) = F(b) - F(a)$ 
 
-Peoperties of CDF
+#### Properties of CDF
 
 1. increasing
 2. right continuous 
-3. F(x) -> 0 as x -> $- \infty$  F(x)-> as x -> $\infty$ 
+3. $F(x) \to 0\ as\ x \to - \infty,\  F(x)\to 1\ as\ x \to \infty $
 
 This is "only if"
 
-**independent of r.v.s**
+### Independence of r.v.s
 
-X,Y are independent r.v.s if P(X<=x, Y<=y) = P(X<= x)P(Y<=y) for all x, y
+$X,Y$ are independent r.v.s if $P(X\le x, Y\le y) = P(X\le x)P(Y\le y)$ for all $x, y$
 
-Discrete case : P(X=x, Y=y) = P(X=x)P(Y=y)
+Discrete case : $P(X=x, Y=y) = P(X=x)P(Y=y)$ 
 
-**Average(Means, Expected Values)**
+### Average(Means, Expected Values)
+
+<u>Example</u>
 
 1,2,3,4,5,6, -> 1+2+..+6 / 6 = 3.5
 
 1,1,1,1,1,3,3,5
 
-two ways: 1. add, divide 2. 5/8 * 1 +2/8 * 3 + 1/8 * 5
+two ways: 
 
-**Average of a discrete r.v.s**
+1. add, divide 
 
-$E(X) = \sum_{} xP(X=x)$ 
 
-**X~Bern(p) **
+2. 5/8 * 1 +2/8 * 3 + 1/8 * 5
+
+#### Average of a discrete r.v.s
+
+$E(X) = \sum_{} xP(X=x)$  
+
+summed over $x$ with $P(X=x) > 0$
+
+##### X~ Bern(p)
 
 $E(x) = 1P(X=1) +0P(X=0) = p$
 
 X = 1 if A occurs , 0 otherwise (indicator r.v.s)
 
-$E(x) = P(A)$  fundamental bridge
+Then $E(x) = P(A)$  **fundamental bridge** between E and P
 
-**X~Bin(n,p)**
+##### X~Bin(n,p)
 
 $E(X) = \sum_{k=0}^n k\binom{n}{k} p^k q^{n-k}$ 
 
@@ -519,29 +566,36 @@ $ = np \sum_{j=0}^{n-1}  \binom{n-1}{j} p^{j} q^{n-j-1}$
 
 $=np$  
 
-**Linearity**
+#### Linearity
 
-$E(X+Y) = E(X) +E(Y)$  even if X, Y are dependent
+1. $E(X+Y) = E(X) +E(Y)$  even if $X, Y$ are dependent
+2. $E(cX) = cE(X)$ 
 
-$E(cX) = cE(X)$ 
+##### Redo Bin
 
-**Redo Bin**
+$E(X) = np$  by linearity since $X = x_1+..+x_n$ 
 
-np  by linearity since X = x1+..+xn 
 
-**Ex**. 5 Card hand ,X = #aces let Xj be indecator of jth card being as ace, 1<=j <=5
 
-E(X) =(indicator) E(X1 + ..+X5) =(linearity) E(X1) +..+ E(X5) = (symmetry) 5E(X1)
+<u>Ex.</u> 5 Card hand ,$X = \#aces$ let $X_j$ be indecator of jth card being as ace, $1\le j \le 5$
 
-= (fundamental bridge) 5P(1st card  ace) = 5/13, even though Xj's are dependent
+$E(X) =(indicator) E(X_1 + ..+X_5) =(linearity) E(X_1) +..+ E(X_5) = (symmetry) 5E(X_1)$
 
-This gives expected value of any Hyoergeometric
+$= (fundamental\ bridge) 5P(1st\ card\ ace) = 5/13$ 
 
-**Geometric **
+even though $X_j$'s are dependent
 
-Geom(p) : independent Bern(p) trials, count #failures before 1st success. let X~Geom(p) q = 1-p
+This gives expected value of any Hypergeometric
 
-PMF: $P(X=k) = q^k p$  valid since $\sum_{k=0}^{\infty} pq^k = p/1-q = 1$
+### Geometric
+
+$Geom(p)$ : independent $Bern(p)$ trials, count # failures before 1st success.
+
+Let $X\sim Geom(p)$  , $q = 1-p$  
+
+#### PMF:
+
+ $P(X=k) = q^k p$  valid since $\sum_{k=0}^{\infty} pq^k = p/1-q = 1$
 
   $E(x) = \sum_{k=0} kpq^k$
 
@@ -549,9 +603,13 @@ $=p \sum_{k=1} kq^k$
 
 $= q/p$
 
-story proof: let c = E(X), $c = 0*p + (1+c)q$
+#### E(X) Story Proof:
 
-$= q+cq => q/p$ v
+Let $c = E(X)$,
+
+$c = 0*p + (1+c)q$
+
+$= q+cq => c = q/p$ 
 
 ## Lecture 10
 
@@ -2069,6 +2127,181 @@ uncorr: $Cov(X+Y, X-Y) = Var(X) + Cov(X,Y)-Cov(X,Y)-Var(Y) = 0$
 So X+Y, X-Y are independent
 
 ## Lecture 31
+
+### Markov chains 
+
+(Example of stochastic processes)
+
+$X_0, X_1,X_2,…$    (think of $X_n$ as state of system at discrete time n)
+
+#### Markov property:
+
+$X_n$ : present, $X_{n+1}$: future
+
+$P(X_{n+1}=j|X_n=i,X_{n-1}=i_{n-1},…,X_0=i_0)$ 
+
+$=P(X_{n+1}=j|X_n=i) = q_{ij}$  (transition prob.)"homogeneous"
+
+**Intuition:** past, future are conditionally indep. given present
+
+transition matrix $Q=(q_{ij})$  
+
+Each row sums to 1
+
+MCMC - Markov Chain Monte Carlo
+
+suppose at time n, X_n has distribution \vec{S} (row vector 1\times M matrix, PMF listed out )
+
+$P(X_{n+1}=j) = \sum_i P(X_{n+1}=j|X_n = j)P(X_n=i)$
+
+$=\sum_i S_i q_{ij}$  is jth entry of $\vec{S}Q$ (1\*M, M\*M)
+
+So $\vec{S}Q$ is the distribution at time n+1
+
+So $\vec{S}Q^2$  is the … at time n+2, 
+
+So $\vec{S}Q^3$ …… at n+3 , and so on.
+
+$P(X_{n+1}=j|X_n=i) = q_{ij}$ 
+
+$P(X_{n+2}=j|X_n=i) = \sum_k P(X_{n+2}=j|X_{n+1}=k,\cancel{X_n = i})P(X_{n+1}=k|X_n=i)= \sum_k q_{ik} q_{kj}$  is $(i,j)$ of $Q^2$  
+
+$P(X_{n+m}=j|X_n=i) $  is ($(i,j)$  entry of $Q^m$)  
+
+
+
+#### Stationary Distribution
+
+$\vec{S}$ (prob. vector 1*M) is stationary for the chain if $\vec{S}Q = \vec{S}$ 
+
+(eigenvalue eigenvector)
+
+##### Questions 
+
+1. Does a stationary distribution exist?
+2. Is it unique?
+3. Does chain converge to $\vec{S}$?
+4. How can we compute it?
+
+## Lecture 32
+
+ ![lecture32](lecture32.png)
+
+Chain is <u>irreducible</u> if possible (with pos. prob.) to get from anywhere to anywhere.
+
+A <u>state</u> is recurrent if starting there , chain has prob. 1 to returning to that store. Otherwise, <u>transient</u>.   
+
+### Stationary Dist.
+
+#### Definiton :
+
+$\vec{S}$ (prob. vector 1*M) is stationary for a chain with trans. matrix Q
+
+ if $\vec{S}Q = \vec{S}$ 
+
+#### Theorem 
+
+For any <u>irreducible</u> Markov chain (with finitely many states):
+
+1. A stationary $\vec{S}$ exists.
+
+2. It is unique.
+
+3. $S_i = \frac{1}{r_i}$, where $r_i$ is average return time to $i$ (starting at $i$).
+
+4. If $Q^m$ is strictly positive for some $m$ , then $P(X_n=i) \to S_i\ as\ n\to \infty$ ;
+
+   $\vec{t}Q^n \to  \vec{S} \ as\ n\to \infty$  , (t any prob. vector)
+
+### <u>Reversible</u> Markov chains
+
+##### Definition:
+
+ Markov chain with trains. matrix $Q=(q_{ij})$ is reversible if there is a prob. vector $\vec{S}$ such that $S_i q_{ij} = S_j q_{ji}$ for all states i, j
+
+##### Theroem:
+
+If reversible with respect to $\vec{S}$ then $\vec{S}$ is stationary 
+
+Let $S_i q_{ij} = S_j q_{ji}$ for all $i, j$ ,show $\vec{S}Q=\vec{S}$
+
+$\sum_iS_iq_{ij} =\sum_i S_j q_{ji} = S_j \sum_i q_{ji} = S_j$   
+
+So $\vec{S}Q = \vec{S}$
+
+##### Example:
+
+Random Walk on an (Undirected) Network
+
+ ![lecture32_2](lecture32_2.png)
+
+Let $d_i$ be degree of i $[d_1 = 2, d_2=2, d_3 = 3, d_4 =1]$
+
+Then $d_i q_{ij} = d_j q_{ji}$ for all $i,j$
+
+Let $i\ne j$, $q_{ij}, q_{ji}$ are both 0 or both not 0
+
+If $\{i, j\}$ is an edge, then $q_{ij} =  1/d_i $ 
+
+So with $M$ nodes $1,2,…M$ , degree $d_i$, 
+
+then $\vec{S}$ with $S_i = d_i/\sum_j d_j$ is stationary
+
+## Lecture 33
+
+$W_ij \le 0$, "weight", $W_{ij} =0$ if no edge $\{i,j\}$, $W_{ij}=W_{ji}$
+
+random walk: from state i, go to j with prob. $\propto $ $W_{ij}$
+
+If \{i,j\} is an edge, then $q_{ij} = W_{ij}/\sum_k W_{ik}$  
+
+Note: $(\sum_k W_{ik})q_{ij} = W_{ji} = (\sum_k W_{jk}) q_{ji}$
+
+$\Rightarrow S_i \propto \sum_k W_{ik}$     
+
+**Conversely: any reversible chain is of this form!**
+Let $W_{ij} = S_i q_{ij} = S_j q_{ji} = W_{ji}$ 
+$$P(X_{n+1} = j| X_n = i) =\frac{ W_{ij}}{\sum_k W_{ik}} =  \frac{S_i q_{ij}}{ \sum_k S_i q_{jk}} = \frac{q_{ij}}{ \sum_k q_{jk}} = q_{ij}$$
+
+### Non-reversible example: Google PageRank 
+
+WWW four webpages
+
+ ![lecture33](lecture33.png)
+
+Importance of page should be based on pages linking to and their importance
+
+$$ Q= \begin{bmatrix} 0 & 1/2 & 1/2 & 0  \\ 1/2 & 0 & 1/2 & 0  \\ 0 & 0 & 0 & 1 \\ 1/4 & 1/4 & 1/4  & 1/4  \end{bmatrix}$$
+
+S: score 
+$S_j = \sum_i S_iq_{ij}$ 
+
+\vec{S} = \vec{S}Q
+which says \vec{S} is stationary dist. of random-surfing chain
+if \vec{S} is normalized
+
+$G = \alpha Q + (1-\alpha) \frac{J}{M}$, where M=# pages, J = all ones,  $0<\alpha <1$ , $\frac{J}{M}$ teleportation, (original value $\alpha = 0.85$)
+guarantees irreducibility, no zeroes in transition matrix G
+use convergence to stationarity! 
+
+Let $\vec{t}$ be initial prob. vector
+$\vec{t}G$ (after one step)
+$\vec{t}G = \alpha \vec{t}Q + (1-\alpha) \frac{\vec{t}J}{M}$
+$\vec{t}Q$ very sparse(mostly 0's)
+$\vec{t}J = (1,1\dots 1)$
+$(\vec{t}G)G = \vec{t}G^2$  $\vec{t}G^3 \dots \vec{t}G^n \dots$
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
