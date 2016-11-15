@@ -50,10 +50,10 @@ choose k objects out of n
 ## Lecture 2
 
 1. Don't lose common sense 
-2. Do chek answers, esp by doing simple and extreme cases
+2. Do check answers, especially by doing simple and extreme cases
 3. Label people , objects etc. If have n people, then label them 1,2…n
 
-Exp: 10 people, split into them of 6, team of 4 => $\binom{10}{6}$  2 teams of 5 => $\binom{10}{5}$ /2
+Example: 10 people, split into them of 6, team of 4 => $\binom{10}{6}$  2 teams of 5 => $\binom{10}{5}$ /2
 
 Problem: pick k times from set of n objects, where order doesn't matter, with replacement.
 
@@ -63,22 +63,24 @@ Equiv : how many ways are there to put k indistinguishable particles into  n dis
 
 
 
-**Story proof- proof by interpretation**
+### Story proof- proof by interpretation
 
 Ex1 $\binom{n}{k}$ =  $\binom{n}{n-k}$ 
 
 Ex2  n$\binom{n-1}{k-1}$ = k$\binom{n}{k}$  pick k people out of n, with one desigenate as president.
 
-Ex3 $ \binom{m+n}{k} = \sum_{j=0}^k \binom{m}{j} \binom{n}{k-j} $ (vander minde) 
+Ex3 $ \binom{m+n}{k} = \sum_{j=0}^k \binom{m}{j} \binom{n}{k-j} $ ([vandermonde](https://en.wikipedia.org/wiki/Vandermonde_matrix)) (范德蒙)
 
-**Axioms of Probability- Non-naive definition**
+### Axioms of Probability
 
-probability sample consists of S and P, where S is sample space, and P , a function which takes an event A as input, returns P(A) and output. 
+**Non-naive definition**
 
+Probability sample consists of S and P, where S is sample space, and P , a function which takes an event $A\subseteq S$ as input, returns $P(A) \in [0,1]$ as output. 
 
+such that 
 
-1. P() = 0, P(S) = 1
-2. P(UAn) = sum of P(An) if A1,A2..An are disjoint (not overlap)
+1. $P(\phi) = 0, P(S) = 1$ 
+2. $P(U_{n=1}^{\infty}A_n) =  \sum_{n=1}^{\infty} P(A_n) $ if $A1,A2..An$ are disjoint (not overlap)
 
 ## Lecture 3
 
@@ -291,7 +293,7 @@ Monty always open a goat door. If he has a choice , he picks with equal probabil
 
 Note: if Monty opens door 2, we know door 2 has a goat, and Monty opened door 2
 
-**LOTP: Law of Total Probability**
+**LOTP: Law of Total Probability 全概率定理**
 
 wish we knew where the car is
 
@@ -393,13 +395,13 @@ $P_i = \frac{1-(q/p)^i}{1-(q/p)^N}, if\ p \ne q$
 
 $P_i = i/N, if\ p=q$  
 
-### Random Variable
+### Random Variable - 随机变量
 
 It's a function from sample space S to R
 
 think of a as numerical "summary" of an aspect of the experiment.
 
-### Bernoulli
+### Bernoulli - 伯努利
 
 X is said to have Bern Distribution, if X has only 2 possible values , 0 and 1.
 
@@ -407,7 +409,7 @@ $P(X=1) = p, P(X=0) = 1 - p$.
 
 X = 1 is an event S:X(S) = 1
 
-### Binomial (n,p)
+### Binomial (n,p) - 二项分布
 
 The distribution of #success X in n indep Bern(p) trials is called Bin(n, p) 
 
@@ -487,7 +489,7 @@ $$P(X=k) = \frac{\binom{4}{k} \binom{48}{5-k}}{\binom{52}{5}}, for\ k \in \{0,1,
 
  <u>Not</u> Binomial.  Like the elk problem(homework)
 
-### Hypergeometric
+### Hypergeometric - 超几何
 
 **Story:** Have b black, w white marbles. Pick simple random sample of size n. 
 
@@ -505,7 +507,7 @@ CDF $P(X\le x)$
 
 ## Lecture 9
 
-### CDF
+### CDF 概率分布函数
 
 $F(x) = P(X\le x)$ ,  as a function of real $x$
 
@@ -525,7 +527,7 @@ $X,Y$ are independent r.v.s if $P(X\le x, Y\le y) = P(X\le x)P(Y\le y)$ for all 
 
 Discrete case : $P(X=x, Y=y) = P(X=x)P(Y=y)$ 
 
-### Average(Means, Expected Values)
+### Average(Means, Expected Values) - 均值（期望）
 
 <u>Example</u>
 
@@ -566,7 +568,7 @@ $ = np \sum_{j=0}^{n-1}  \binom{n-1}{j} p^{j} q^{n-j-1}$
 
 $=np$  
 
-#### Linearity
+#### Linearity 线性
 
 1. $E(X+Y) = E(X) +E(Y)$  even if $X, Y$ are dependent
 2. $E(cX) = cE(X)$ 
@@ -587,7 +589,7 @@ even though $X_j$'s are dependent
 
 This gives expected value of any Hypergeometric
 
-### Geometric
+### Geometric 几何分布
 
 $Geom(p)$ : independent $Bern(p)$ trials, count # failures before 1st success.
 
@@ -613,51 +615,51 @@ $= q+cq => c = q/p$
 
 ## Lecture 10
 
-###Linearity
+### Linearity
 
-Let T = X+Y, show E(T) = E(X)+E(Y) 
+Let $T = X+Y$, show $E(T) = E(X)+E(Y)$ 
 
 $\sum_{t} P(T=t) = \sum_{x} xP(X=x) + \sum_{y} yP(Y=y)$  
 
-Extreme dependent X=Y
+Extreme dependent $X=Y$
 
-E(X+Y) = E(2X) =2E(X)
+$E(X+Y) = E(2X) =2E(X)$ 
 
-**Negetive Binomial**
+### Negetive Binomial
 
-parameters r,p
+parameters $r,p$
 
-story: independent Bern(p) trials #failures before the rth success
+**story:** independent $Bern(p)$ trials #failures before the $r$th success
 
-PMF: $P(X=n) =   \binom{n+r-1}{r-1} p^r (1-p)^n$   
+**PMF**: $P(X=n) =   \binom{n+r-1}{r-1} p^r (1-p)^n$   
 
-$E(X) = E(X1+..+Xr) = E(X1) +..+E(Xr) = rq/p
+**E(X):** $E(X) = E(X_1+\dots +X_r) = E(X_1) +\dots +E(X_r) = rq/p
 
-Xj is #failures between (j-1)th and jth success, Xj~Geom(p) 
+$X_j$ is #failures between $(j-1)$th and $j$th success, $X_j\sim Geom(p)$  
 
-**Geom**
+###Geom
 
-X~FS(p) time until 1st success , counting the success
+$X\sim FS(p)$ time until 1st success , counting the success
 
-Let Y = X-1, Then Y~Geom(p) 
+Let $Y = X-1$, Then $Y\sim Geom(p)$ 
 
-E(X) = E(Y+1) = E(Y) + 1 =q/p + 1 = 1/p
+$E(X) = E(Y+1) = E(Y) + 1 =q/p + 1 = 1/p$ 
 
-**Putnam**
+### Putnam
 
-Random permutation of 1,2,..n , where  n>= 2
+Random permutation of $1,2,..n$ , where  $n\ge  2$
 
 Find expected # of local maxima.  Ex. **3**214**7**5**6**  
 
-Let I~j~  be indecator r.v of position j having a local max, 1<=j <=n
+Let $I_j$  be indecator r.v of position $j$ having a local max, $1\le j \le n$
 
-$E(I1 + ..In) = E(I1)+..+E(In) = \frac{n-2}{3}  + 2/2 = \frac{n+1}{3}$   
+$E(I_1 + \dots +I_n) = E(I_1)+\dots +E(I_n) = \frac{n-2}{3}  + 2/2 = \frac{n+1}{3}$   
 
-**St.Petersburg Paradox**
+### St.Petersburg Paradox
 
-Get $2^x^ where X is #filps of fair coin until first H, including the success
+Get $2^x$ where X is #filps of fair coin until first H, including the success
 
-Y = 2^x^ find E(Y) 
+$Y = 2^x$ find $E(Y)$ 
 
 $E(Y) = \sum_{k=1}^{\infty} 2^k \frac{1}{2^k} = \sum_{} 1 = \infty$   
 
@@ -677,129 +679,140 @@ Dont' confuse r,v with its distribution
 
 r.v -> random house  distribution -> blueprint
 
-**Poisson Distribution** $X \sim Pois(\lambda)$
+### Poisson Distribution - 泊松分布
 
-PMF: $P(X=k) = e^{-\lambda} \frac{\lambda^k}{k!} $   \lambda is the rate parameter >0
+$X \sim Pois(\lambda)$
+
+####PMF:
+$P(X=k) = e^{-\lambda} \frac{\lambda^k}{k!} $   $\lambda$ is the rate parameter >0
 
 Valid: $\sum_{k=0}^{\infty}e^{-\lambda} \frac{\lambda^k}{k!} = 1$
-
+####E(X)
 $E(X) = \lambda e^{-\lambda}\sum_{k=1}^{\infty} \frac{\lambda^{k-1}}{(k-1)!} = \lambda $  
 
-often used for applications where counting # of "successes" where ther are a large  # trials  each with small prob of success
+often used for applications where counting # of "successes" where there are a large  # trials  each with small prob of success
 
+####Examples:
 1. \#emails in an hour
-
-
 2. \#chips in choc chip cookies
 3. \#earthquakes in a year in some area
 
-**Pois Paradigm**
+####Pois Paradigm (Pois Approximation)
 
-Events A1, A2,..An, P(Aj) = pj, n large, pj's small
+Events $A_1, A_2,\dots A_n$, $P(A_j) = p_j$, $n$ large, $p_j$'s small
 
 events independent or "weakly dependent"  
 
-\# of  Aj's that occure is approx Pois(\lambda) \lambda = sum of pj
+\# of  Aj's that occure is approx $Pois(\lambda)$, $\lambda = \sum p_j$
 
-Binormial converges to Poisson
+**Binomial converges to Poisson**
 
-Raindrops
+<u>Example.</u> 
 
-Ex. Have n people, find approx  prob that there are 3 people with same birthday.
+Have n people, find approx  prob that there are 3 people with same birthday.
 
  $\binom{n}{3}$ triplets of people , indicator r,v for each, I~ijk~ , i<j<k
 
-$E(triple matches) = \binom{n}{3}1/365^2$  
+$E(triple\ matches) = \binom{n}{3}1/365^2$  
 
-X = #triple matches  Approx Pois(\lambda) $\lambda = \binom{n}{3} 1/365^2$ 
+X = #triple matches  Approx $Pois(\lambda)$,  $\lambda = \binom{n}{3} 1/365^2$ 
 
-I123, I124 are not independent 
+$I_{123}, I_{124}$  are not independent 
 
-P(X>=1) = 1 - P(X=0) ~ $1 - e^{-\lambda}$ 
+$P(X\ge 1) = 1 - P(X=0) \approx 1 - e^{-\lambda}$ 
 
 ## Lecture 12
 
-**Discrete**
+|             | Discrete离散                     | Continuous连续                             |
+| ----------- | ------------------------------ | ---------------------------------------- |
+| **PMF／PDF** | $P(X=x)$                       | $f_x(x) = F'_X(x)$                       |
+| **CDF**     | $F_x(x) = P(X\le x)$           | $F_X(x) = P(X\le x)$                     |
+| **E(X)**    | $E(x) = \sum_{} xP(X=x)$       | $E(X) = \int xf(x)dx$                    |
+|             |                                |                                          |
+| **LOTUS**   | $E(g(x)) = \sum_{} g(x)P(X=x)$ | $E(g(X)) = \int_{-\infty}^{\infty} g(x)f(x)dx $ |
+|             |                                |                                          |
 
-X
 
-PMF P(X=x)
+### PDF - Probability Density Function
 
-CDF F~x~(x) = P(X,=x)
+#### Definiton:
 
-$E(x) = \sum_{} xP(X=x)$
+R.v X has PDF f(x) if $P(a\leq X\leq b) = \int_{a}^{b} f(x)dx $  for all a and b
 
-Var(X) = 
+#### To be valid:
 
-LOTUS $E(g(x)) = \sum_{} g(x)P(X=x)$
+1. $f(x) \ge 0$
+2. $\int_{-\infty}^{\infty} f(x)dx = 1$  
 
-**Continous**
 
-X
-
-PDF f~x~(x) = F~X~'(x)
-
-CDF F~X~(x) = P(X<=x)
-
-any specific value P(X=x) = 0
-
-**PDF - Probability Density Function**
-
-Defn: R.v X has PDF f(x) if $P(a\leq X\leq b) = \int_{a}^{b} f(x)dx $  for all a and b
-
-to be valid f(x) >= 0, intergal of f(x) = 1
 
 If X has PDF f, the CDF is $F(x) = P(X\leq x) = \int_{-\infty}^{x}f(t)dt $   
 
-If X has CDF F ( and X is continous ), then f(x) =F'(x) by FTC
+If X has CDF F ( and X is continous ), then $f(x) =F'(x)$ by FTC
 
 $P(a\le X\le b) = \int_{a}^{b} f(x)dx = F(b) - F(a )$   
 
-$E(X) = \int xf(x)dx$ 
+### Var & Std
 
-**Variance**
+#### Variance - 方差
 
 $Var(X) = E(X - EX)^2$  
 
-**Standard deviation**: $SD(X) = \sqrt{Var(X)}$  
-
 Another Way to Express Var:
 
-$Var(X) = E(X^2 - 2X(EX) + (EX)) = E(X^2) - 2E(X)E(X) + (EX)^2 = E(X^2) - (EX)^2$
+$Var(X) = E(X^2 - 2X(EX) + (EX)) = E(X^2) - 2E(X)E(X) + (EX)^2 $
 
-Notation $EX^2 = E(X^2)$ 
+$= E(X^2) - (EX)^2$
 
-**Uniform** Unif(a,b)
+**Notation** $EX^2 = E(X^2)$ 
+
+#### Standard deviation - 标准差
+
+ $SD(X) = \sqrt{Var(X)}$  
+
+### Uniform - 均匀分布
+
+$Unif(a,b)$
 
 probability length
 
-f(x) = c, if a <= x <= b; 0, otherwise 
+#### PDF
+
+ f(x) = c, if a <= x <= b; 0, otherwise 
+
+#### CDF
 
 $1 = \int_{a}^b cdx = c = \frac{1}{b-a}$ 
 $$
 F(X)= \int_{-\infty}^{x} f(t)dt = 0, if x < a; 1, if x > b; x-a/x-b, if a<=x <= b;
 $$
+#### E(X)
+
 $E(X) = \int_{a}^{b} \frac{x}{b-a} dx = \frac{a+b}{2} $  
 
 $Y = X^2, E(X^2) =E(Y) = \int_{-\infty}^{\infty} x^2 f(x)dx $ 
 
-law of the unconscious statistician (LOTUS)
+**law of the unconscious statistician (LOTUS)**
 
 $E(g(X)) = \int_{-\infty}^{\infty} g(x)f(x)dx $  
 
-Var(X) = 
+#### Var(U)
 
-Let U~Unif(0,1) E(U) = 1/2 ,$ E(U^2) = \int_{0}^{1} u^2f(u)du = 1/3$
+Let $U\sim Unif(0,1),\ E(U) = 1/2$ ,$ E(U^2) = \int_{0}^{1} u^2f(u)du = 1/3$
 
-Var(U) = 1/3 - 1/4 = 1/12
+$Var(U) = 1/3 - 1/4 = 1/12$ 
+
+#### Universality
 
 > Uniform is Universal 
 
-let U~Unif(0,1) F be CDF (assume F is strictly increasing and continuous)
+Let $U\sim Unif(0,1)$ F be CDF (assume F is strictly increasing and continuous)
 
-Then Let $X = F^{-1}(U)$, Then X~F
+Then Let $X = F^{-1}(U)$, Then $X \sim F$  
 
-Proof:  $P(X\leq x) = P(F^{-1} (U) \leq x) =P(U\leq F(x)) = F(x)$ 
+##### Proof:
+
+ $P(X\leq x) = P(F^{-1} (U) \leq x) =P(U\leq F(x)) = F(x)$ 
 
 ## Lecture 13
 
