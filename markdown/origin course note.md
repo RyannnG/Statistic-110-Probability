@@ -613,7 +613,7 @@ $= q+cq => c = q/p$
 
 ## Lecture 10
 
-**Linearity**
+###Linearity
 
 Let T = X+Y, show E(T) = E(X)+E(Y) 
 
@@ -2290,6 +2290,67 @@ $\vec{t}G = \alpha \vec{t}Q + (1-\alpha) \frac{\vec{t}J}{M}$
 $\vec{t}Q$ very sparse(mostly 0's)
 $\vec{t}J = (1,1\dots 1)$
 $(\vec{t}G)G = \vec{t}G^2$  $\vec{t}G^3 \dots \vec{t}G^n \dots$
+
+## Lecture 34
+
+### 10
+
+1. Conditioning
+2. Symmetry
+3. r.v.s and their distributions
+4. Stories
+5. Linearity
+6. Indicator r.v.s
+7. LOTUS
+8. LLN - Law of Large Numbers 
+9. CLT - Central Limit Theroem
+10. Markov Chains
+
+**1-4:** what is randomness, uncertainty?
+
+**5-7:** computing average 
+
+**8-10:** long run behavior
+
+###Course
+1. 111
+2. 139
+3. 123
+4. 115
+5. 171
+6. 160
+
+### Regression 
+
+$Y = \beta_0 + \beta_1 X + \epsilon$, $E(\epsilon|X) = 0$
+
+$Cov(Y,X) = Cov(\beta_1 X, X) + Cov(\epsilon, X)=\beta_1 Var(X)$
+$\Rightarrow \beta_1 = \frac{Cov(X,Y)}{Var(X)}$
+
+$E(\epsilon) = E(E(\epsilon|X)) = 0$
+$E(E(\epsilon X|X) = 0 $
+
+###Recommendations:
+_Mostly Harmless Econometrics_
+
+Sampling from finite pupulation
+true values $y_1,\dots ,y_n$, treated as fixed
+sample of size $n$,
+Goal: estimate$ \sum_{j=1}^n y_j$
+prob. that person $j$ is in sample $p_j>0$ (known)
+Let $(X_1, Z_1),\dots, (X_n, Z_n)$ be data, with $X_j$ is the y value , $Z_j$ is the ID number
+Question: How do we get unbiased estimated for the total?
+Then $\sum_{j=1}^n frac{X_j}{P_{Z_j}}$ is unbiased.
+$\sum_{j=1}^n frac{X_j}{P_{Z_j}} = \sum_{j=1}^N \frac{I_j y_j}{P_j}$, $I_j$ is indicator of jth perpon being included
+Expected value: $\sum_{j=1}^N \cancel{\frac{P_j}{P_j}} y_j$ 
+Howitz - Thompson, inverse prob. w
+Is it a good estimator? 
+Ex. Basu's Elephant
+
+
+
+
+
 
 
 
