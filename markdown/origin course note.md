@@ -665,7 +665,7 @@ $E(Y) = \sum_{k=1}^{\infty} 2^k \frac{1}{2^k} = \sum_{} 1 = \infty$
 
 bound at $$2^{40}$$  .  Then $\sum_{k=1}^{40} 2^k \frac{1}{2^k} = 40$   
 
-E(2^x) =\infty not q= 2^{E(x)} = 4
+$E(2^x) =\infty$ not $q= 2^{E(x)} = 4$ 
 
 ## Lecture 11
 
