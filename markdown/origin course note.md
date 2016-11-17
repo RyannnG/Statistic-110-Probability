@@ -816,17 +816,17 @@ Then Let $X = F^{-1}(U)$, Then $X \sim F$
 
 ## Lecture 13
 
-**Universality of Unif** 
+### Universality of Unif
 
 let  F be a cont. strictly increasing CDF
 
-Then $X = F^{-1}(U)$ ~ F if U~unif(0, 1)
+Then $X = F^{-1}(U) \sim  F$ if $U\sim unif(0, 1)$
 
-Also: if X~F, then F(X)~Unif(0,1)
+Also: if $X\sim F$, then $F(X)\sim Unif(0,1)$
 
 $F(x) = P(X\leq x)$ ~~F(X) = P(X \leq X) = 1~~ 
 
-Ex. Let  $F(x) = 1 - e^{-x}, x>0$  (Expo(1)), U~Unif(0,1)
+Ex. Let  $F(x) = 1 - e^{-x}, x>0$  (Expo(1)), $U\sim Unif(0,1)$ 
 
 simulate X~F. $F^{-1}(u) = -\ln (1-u)$  => $F^{-1}(U) = -\ln (1-U) \sim F $ 
 
@@ -834,63 +834,77 @@ $1-U \sim Unif(0, 1)$ symmetry of Unif
 
 $a+bU$ is Unif on some interval. Nonlinear usually -> Non Unif. 
 
-**independent of r.v.s** X1,..Xn
+### Independent of r.v.s 
 
-Defn X1,…Xn indep if P(X1 <= x1, …Xn <= xn) = P(X1<=x1)…P(Xn<=xn)
+$X_1,\dots X_n$
 
-for all x1,…xn
+#### Definiton:
 
-Discrete case: joint PMF P(X1 = x1,..Xn=xn) = P(X1-x1)…P(Xn=xn) 
+$X_1,\dots X_n$ independent if $P(X_1 \le x_1,\dots X_n\le x_n) = P(X_1\le x_1)\dots P(X_n\le x_n)$
 
-Ex. X1, X2 ~ Bern(1/2) i.i.d, X3 = 1 if X1 = X2; 0 otherwise
+for all $x_1,\dots x_n$
+
+##### Discrete case
+
+ joint PMF $P(X_1 = x_1,\dots X_n=x_n) = P(X_1=x_1)\dots P(X_n=x_n) $ 
+
+#### Example
+
+$X_1, X_2 \sim Bern(1/2)$ i.i.d, $X_3 = 1$ if $X_1 = X_2$; 0 otherwise
 
 These are pairwise indep, not indep
 
-**Normal Distribution**
+### Normal Distribution 正态分布
 
 (Central Limit Therom: sum of a lot of i.i.d r.v.s looks Normal )
 
 $N(0, 1)$ - mean = 0, var = 1 
 
-has PDF  $$f(z) = ce^{\frac{z^2}{2}}$$  c - normalizing const
+has PDF  
 
-$c = 1/\sqrt{2\pi}$ 
+$$f(z) = ce^{\frac{z^2}{2}}$$ 
+
+ c - normalizing const，$c = 1/\sqrt{2\pi}$ 
 
 $Z\sim N(0,1)$ 
 
-EZ = 0 by symmetry odd function
+$EZ = 0$  by symmetry odd function
 
-E(Z^3) = 0 "3rd moment"
+$E(Z^3) = 0$  "3rd moment"
 
 $ Var(Z) = E(Z^2) - (EZ)^2 = E(Z^2) = 1$  LOTUS
 
 Notation : $\Phi$ is the standard Normal CDF 
 
- $$\Phi(z) = \frac{1}{\sqrt2\pi} \int_{-\infty}^z e^{-\frac{t^2}{x}}dt$$  
+ $$\Phi(z) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^z e^{-\frac{t^2}{x}}dt$$  
 
 $\Phi(-z) = 1- \Phi(z)$  by symmetry
 
 ## Lecture 14
 
--Z~N(0,1) (symmetry) Normal
+$-Z\sim N(0,1)$   (symmetry) Normal
 
-Let $X = \mu + \sigma Z$  $\mu$ (mean, location) $\sigma >0$ (SD, scale) 
+Let $X = \mu + \sigma Z$ - $\mu$ (mean, location) $\sigma >0$ (SD, scale) 
 
 Then we say $X \sim N(\mu, \sigma^2)$ 
 
 $E(X) = \mu, Var(X) = \sigma^2Var(Z)$ 
 
+
+
 $Var(X+c) = Var(X)$ 
 
 $Var(cX) = c^2 Var(X)$ 
 
-$Var(X) \geq 0, Var(X) = 0$, if and only if P(X=a) = 0, for some a
+$Var(X) \geq 0, Var(X) = 0$, if and only if $P(X=a) = 0$, for some a
 
 $Var(X +Y) \ne Var(X) + Var(Y)$  in general , Var not linear
 
 [equal if X,Y are independent]
 
 $Var(X+X) = Var(2X) = 4Var(X)$ 
+
+
 
 $Z = \frac{X-\mu}{\sigma}$  standard 
 
@@ -900,7 +914,7 @@ CDF: $P(X\le x) = P(\frac{X-\mu}{\sigma} \le \frac{x-\mu}{\sigma}) = \Phi(\frac{
 
 $-X = -\mu + \sigma(-Z) \sim N(-\mu, \sigma^2)$ 
 
-Later we'll show if Xj ~ N(\mu, sigma j^2) indep, 
+Later we'll show if $X_j \sim N(\mu_j,\sigma_j^2)$ indep, 
 
 $X_1 + X_2 \sim N(\mu_1 + \mu_2, \sigma_1^2+\sigma_2^2)$ 
 
@@ -908,7 +922,7 @@ $X_1 - X_2 \sim N(\mu_1 - \mu_2, \sigma_1^2+\sigma_2^2)$
 
 **68-95-99.7% Rule**
 
-**LOTUS**
+### LOTUS
 
 X: 0, 1, 2, 3...
 
@@ -946,7 +960,7 @@ $Var(X) = np - np^2 = np(1-q) = npq, q=(1-p)$
 
 
 
-**Prove LOTUS for discrete sample space**
+#### Prove LOTUS for discrete sample space
 
 $E(g(x)) = \sum_{} g(x)P(X=x)$ 
 
@@ -954,27 +968,27 @@ $E(g(x)) = \sum_{} g(x)P(X=x)$
 
 ## Lecture 15
 
-**Coupon collector**(Toy collector)
+### Coupon collector(Toy collector)
 
-n toy types, equally likely,  find expected time   until have complete set
+n toy types, equally likely,  find expected time until have complete set
 
-T = T_1 + T_2 + .. T_n
+$T = T_1 + T_2 + \dots T_n$
 
-T_1 =(time until 1st new toy) = 1
+$T_1$ =(time until 1st new toy) = 1
 
-T_2 = (Addtional time until 2nd new toy)
+$T_2$ = (Addtional time until 2nd new toy)
 
-T_3 = (…..until 3rd )
+$T_3$ = (…..until 3rd )
 
-T_1 = 1
+$T_1$ = 1 
 
-$T_2 - 1 \sim Geom(n-1/n)$ 
+$T_2 - 1 \sim Geom((n-1)/n)$ 
 
 $T_j - 1 \sim Geom(\frac{n-(j-1)}{n})$ 
 
 $E(T) = E(T_1) + E(T_2) +… E(T_n) = 1 + n/(n-1)+ n/(n-2) + n/1 = n(1 + 1/2 +…+ 1/n) \approx n\log n$  
 
-**Universality**
+### Universality
 
 $X\sim F$
 
@@ -982,7 +996,7 @@ $F(x_0) = 1/3$
 
 $P(F(X) \le 1/3) = P(X \le x_0) = F(x_0) = 1/3$ 
 
-**Logistic Distribution**
+### Logistic Distribution
 
 $$F(x) = \frac{e^x}{1 + e^x}$$
 
@@ -990,7 +1004,7 @@ $U\sim Unif(0, 1)$ , consider $F^{-1}(U) = \log \frac{U}{1-U}$ is logistic
 
 
 
-Let X, Y, Z ,be i.i.d positive r.v.s  Find $E(\frac{X}{X+Y+Z})$ 
+Let $X, Y, Z$ ,be i.i.d positive r.v.s  Find $E(\frac{X}{X+Y+Z})$ 
 
 $E(\frac{X}{X+Y+Z})  = E(\frac{Y}{X+Y+Z}) = E(\frac{Z}{X+Y+Z})$ by symmetry 
 
