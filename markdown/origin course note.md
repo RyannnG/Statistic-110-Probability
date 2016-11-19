@@ -1066,23 +1066,27 @@ $f(x) = \frac{1}{2}x^{-\frac{1}{2}}, x\in (0,1)$
 
 rate parameter $\lambda$
 
-$X \sim Expo(\lambda)$ has PDF $\lambda e^{-\lambda x}, x>0$ 0otherwise
+$X \sim Expo(\lambda)$ has PDF $\lambda e^{-\lambda x}, x>0$ 0 otherwise
 
 CDF $F(x)= \int_{0}^{x}\lambda e^{-\lambda t}dt = 1 - e^{\lambda x}, x>0$ 
+
+##### Example
 
 Let $Y= \lambda X$ then $Y\sim Expo(1)$ 
 
 since $P(Y\le y) = P(X\le y/\lambda)= 1- e^{-y}$ 
 
-Let $Y\sim Expo(1)$ find E(Y), Var(Y)
 
-$E(Y) = \int_{0}^{\infty} ye^{-y}dy = 1$ , du = dy, dv = -e^-y^
+
+Let $Y\sim Expo(1)$ find $E(Y), Var(Y)$
+
+$E(Y) = \int_{0}^{\infty} ye^{-y}dy = 1$ , $du = dy, dv = -e^{-y}$ 
 
 $Var(Y) = E(Y^2) - (EY)^2 = 1$  LOTUS
 
 So $ X=Y/\lambda$ has $E(X) = 1/\lambda, Var(X) = 1/\lambda^2$ 
 
-**Memoryless Property** 
+##### Memoryless Property 
 
 $P(X\ge s+t|X\ge s) = P(X\ge t)$ 
 
@@ -1098,25 +1102,27 @@ $E(X|X>a) = a + E(X-a|X>a) = a + q/\lambda$  by memoryless
 
 $E(T|T>20) > E(T)$  
 
-IF memoryless, we would have E(T|T>20) = 20 + E(T)
+If memoryless, we would have $E(T|T>20) = 20 + E(T)$
 
-Therom: IF X is a positive continuous r.v.  with memoryless property, then $X\sim Expo(\lambda)$  for some $\lambda$ 
+**Therom**: If $X$ is a positive continuous r.v.  with memoryless property, then $X\sim Expo(\lambda)$  for some $\lambda$ 
 
-**Proof** Let F be the CDF of X, G(x) = P(X>x) = 1 - F(x)
+**Proof** Let $F$ be the $CDF$ of $X$, $G(x) = P(X>x) = 1 - F(x)$
 
-memoryless property is G(x+t) = G(s)G(t) solve for G.
+memoryless property is $G(s+t) = G(s)G(t)$ solve for G.
 
-let s=t, $G(2t) = G(t)^2$ , $G(3t) = G(t)^3$ …$G(kt) = G(t)^k$ 
+let $s=t$, $G(2t) = G(t)^2$ , $G(3t) = G(t)^3$ …$G(kt) = G(t)^k$ 
 
 $G(t/2) = G(t)^{1/2}$ …$G(t/k) = G(t)^{1/k}$
 
 $G(\frac{m}{n} t) = G(t)^{\frac{m}{n}}$  So $G(xt) = G(t)^x $ for all real x >0
 
-let t = 1, $G(x) = G(1)^x = e^{x\ln G(1)} = e^{-\lambda x}$  $ lnG(1) = -\lambda$ 
+let $t = 1$, $G(x) = G(1)^x = e^{x\ln G(1)} = e^{-\lambda x}$  $ lnG(1) = -\lambda$ 
 
-**Moment Generating Function**(MGF)
+### Moment Generating Function(MGF)
 
-Defn ;A r.v X has MGF $M(t) = E(e^{tx})$ 
+#### Definition
+
+A r.v X has MGF $M(t) = E(e^{tx})$ 
 
 as a function of t, if this is finite on some (-0, a), a>0
 
@@ -1128,7 +1134,7 @@ $$E(e^{tx}) = E(\sum_{n=0}^{\infty} \frac{x^n t^n}{n!}) = \sum_{n=0}^{\infty}\fr
 
 
 
-Three reasons why MGF important: 
+#### Three reasons why MGF important: 
 
 Let X have MGF M(t)
 
@@ -1138,9 +1144,11 @@ Let X have MGF M(t)
 
 2. MGF determines the distribution.  i.e. if X,Y have same MGF , then they have same CDF
 
-3. If X has MGF M_x, Y has MGF M_y, X independent of Y, then MGF of X+Y is $E(e^{t(X+Y)}) = E(e^{tX})  + E(e^{tY})$ 
+3. If X has MGF $M_x$, Y has MGF $M_y$, X independent of Y, then MGF of X+Y is $E(e^{t(X+Y)}) = E(e^{tX})  + E(e^{tY})$ 
 
-Ex. $X\sim Bern(p)$, $M(t) = E(e^{tX}) = pe^t + q, q= 1-p$
+#### Example
+
+ $X\sim Bern(p)$, $M(t) = E(e^{tX}) = pe^t + q, q= 1-p$
 
 $X\sim Bin(n, p) => M(t) = (pe^t + q)^n$ 
 
@@ -1148,9 +1156,9 @@ $Z\sim N(0,1)$  => $$M(t) = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{tZ - 
 
 $$= \frac{e^{t^2/2}}{\sqrt{2\pi}}\int_{-\infty}^{\infty}e^{-\frac{1}{2}(Z-t)^2}dz = e^{t^2/2}$$
 
-**Laplace Rule of Succession**
+### Laplace Rule of Succession
 
-Given p,  X1, X2 … i.i.d,  Bern(p)
+Given $p$, $X_1, X_2 …$ i.i.d,  $Bern(p)$
 
 p unknown, 
 
@@ -1158,7 +1166,7 @@ Laplace used the rule of succession to calculate the probability that the sun wi
 
 Bayesian : treat p as a r.v.
 
-Let $P\sim Unif(0,1)$  (prior) Let S_n = X1,…Xn
+Let $P\sim Unif(0,1)$  (prior) Let $S_n = X_1,\dots X_n$
 
 So$ S_n|p \sim Bin(n,p)$ , $p \sim Unif(0,1)$
 
@@ -1166,7 +1174,7 @@ Find Posterior $p|S_n$ , and $P(X_{n+1} = 1| S_n = n)$
 
 $$f(p|S_n = k) = \frac{P(S_n = k|p)f(p)}{P(S_n =k)}$$  
 
- f(p) - prior, 1;  P(S_n =k) does not depend on p
+ f(p) - prior, 1;  $P(S_n =k)$ does not depend on p
 
 $P(S_n = k) = \int_{0}^{1}P(S_n = k/p)f(p)dp$ 
 
@@ -1178,13 +1186,15 @@ $p(X_{n+1}=1|S_n = n) = \int_{0}^{1}(n+1)pp^mdp= \frac{n+1}{n+2}$
 
 ## Lecture 18
 
-**Expo MGF**
+### MGF
+
+#### Expo MGF
 
 $X\sim Expo(1)$, find MGF, moment 
 
 $M(t) = E(e^{tx}) = \int_{0}^{\infty} e^{-tx}e^{-x}dx = \int_{0}^{\infty} e^{-x(1-t)}dx = \frac{1}{1-t}, t<1$ 
 
-M'(0) = E(X), M"(0) = E(X^2^) , M'''(0) = E(X^3^)….
+$M'(0) = E(X), M''(0) = E(X^2) , M'''(0) = E(X^3)\dots$
 
 $ |t| <1,  \frac{1}{1-t} = \sum_{n=0}^{\infty}t^n = \sum_{n=0}^{\infty} n!\frac{t^n}{n!} $    $E(X^n) = n! $
 
@@ -1192,35 +1202,35 @@ $Y\sim Expo(\lambda)$, let $X = \lambda Y \sim Expo(1)$, so $Y^n = \frac{X^n}{\l
 
 $E(Y^n) = \frac{E(X^n)}{\lambda^n} = \frac{n!}{\lambda^n}$ 
 
-**Normal MGF**
+#### Normal MGF
 
 Let $Z\sim N(0,1)$ ,find all its moment
 
-$E(Z^n) = 0$ for n odd by symmetry
+$E(Z^n) = 0$ for n, odd by symmetry
 
 MGF $$M(t) =e^{t^2/2} = \sum_{n=0}^{\infty} \frac{(t^2/2)^n}{n!} =  \sum_{n=0}^{\infty} \frac{(2n)!t^{2n}}{z^n n!(2n)!}$$  
 
 =>$$E(Z^{2n}) = \frac{(2n)!}{2^n n!}$$ 
 
-**Poisson MGF**
+#### Poisson MGF
 
 $X\sim Pois(\lambda)$   $E(e^{tx}) = \sum_{k=0}^{\infty} e^{tx} e^{-\lambda} \frac{\lambda^k}{k!} = e^{-\lambda} e^{\lambda e^t} $ 
 
-let$ Y\sim Pois(\mu)$ **indep** of X ,find distribution  of X+Y , 
+let $ Y\sim Pois(\mu)$ **indep** of X ,find distribution of $X+Y$ , 
 
 Multiply  MGFs, $e^{\lambda(e^t-1)}e^{\mu (e^t-1)} = e^{(\lambda+\mu)(e^t-1)}$  => $X+Y \sim Pois(\lambda + \mu)$ 
 
 sum of independent Poisson is still Poisson
 
- Counterexample if X, Y dependent: X =Y => X+Y = 2X is not Poisson since even;
+ Counter-example if $X, Y$ dependent: $X =Y$  => $X+Y = 2X$ is not Poisson since:
 
 $E(X+Y) = E(2X) = 2\lambda, Var(2X) = 4\lambda $ 
 
-**Joint Distribution**
+### Joint Distribution
 
 X, Y Bernouli
 
-Ex. 2D
+Example. 2D
 
 |      | Y=0  | Y=1  |      |
 | ---- | ---- | ---- | ---- |
@@ -1234,55 +1244,57 @@ They are independent
 
 X, Y r.vs 
 
-**joint CDF**
+#### Joint CDF
 
 $F(x,y) =P(X\le x, Y \le y)$
 
-**joint PMF (discrete case)**
+#### Joint PMF (discrete case)
 
 $P(X=x, Y=y)$ 
 
-**Marginal CDF**
+#### Marginal CDF
 
 $P(X\le x)$ is marginal dist. of X
 
-**Joint PDF (cont.)**
+#### Joint PDF (cont.)
 
-f(x, y) such that 
+$f(x, y)$ such that 
 
 $P((X,Y)\in B) = \iint_{B} f(x, y)dxdy$ 
 
-**independence**
+#### Independence
 
-X,Y independent if and only if $F(x,y) = F_X(x)F_Y(y)$ 
+$X,Y$ independent if and only if $F(x,y) = F_X(x)F_Y(y)$
 
 Equiv. 
 
 $P(X=x, Y=y) = P(X=x)P(Y=y)$
 
-$ f(x, y) = f_X(x)f_Y$ for all x, y >0
+$ f(x, y) = f_X(x)f_Y(y)$ for all $x, y >0$
 
-**Getting marginals**
+#### Getting marginals
 
 $P(X=x, Y=y) = \sum_y P(X=x, Y=y)$ discrete
 
 $f_Y(y) = \int_{-\infty}^{\infty} f_{X,Y}(x,y)dx$
 
-Ex. Uniform on $square\{(x,y): x,y\in [0,1]\} $
+##### Example
 
-joint PDF const. on the square, 0 outside
+1. Uniform on $square\{(x,y): x,y\in [0,1]\} $
 
-integral is area c = 1/area = 1
+   joint PDF const. on the square, 0 outside
 
-marginal:  X,Y are independent Unif(0,1)
+   integral is area c = 1/area = 1
 
-Ex Unif in disc $x^2 = y^2 \le 1$ 
+   marginal:  X,Y are independent Unif(0,1)
 
-joint PDF: $1/\pi$ inside the circle; 0 otherwise
+2. Unif in disc $x^2 = y^2 \le 1$ 
 
-X,Y dependent. 
+   joint PDF: $1/\pi$ inside the circle; 0 otherwise
 
-Given X=x , $|y| \le \sqrt{1-x^2}$ 
+   X,Y dependent. 
+
+   Given X=x , $|y| \le \sqrt{1-x^2}$ 
 
 ## Lecture 19
 
