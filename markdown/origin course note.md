@@ -1298,71 +1298,79 @@ $f_Y(y) = \int_{-\infty}^{\infty} f_{X,Y}(x,y)dx$
 
 ## Lecture 19
 
-Joint , conditional, marginal, dist
+#### Marginal distribution 边缘概率分布
 
-joint CDF $F(x,y) = P(X\le x, Y\le y)$ 
+Joint CDF $F(x,y) = P(X\le x, Y\le y)$ 
 
-cont. case(jonit PDF) : $f(x, y) = \frac{\partial}{\partial x \partial y}F(x, y)$ 
+cont. case(joint PDF) : $f(x, y) = \frac{\partial}{\partial x \partial y}F(x, y)$ 
 
 $P((X, Y) \in A) = \iint_{A} f(x,y)dxdy$ 
 
-marginal PDF of X: $\int f(x,y)dy$ 
+Marginal PDF of $X$: $\int f(x,y)dy$ 
 
-conditional PDF of Y|X is 
+Conditional PDF of $Y|X$ is 
 
-$f_{Y|X}(y|x) = f_{X,Y}(x,y) / f_{X}(x)  = f_{X|Y}(x|y)f_{Y}(y)/f_{X}(x) $
+$$f_{Y|X}(y|x) = \frac{f_{X,Y}(x,y) }{f_{X}(x)}  = \frac{f_{X|Y}(x|y)f_{Y}(y)}{f_{X}(x)} $$
 
-X, Y independent if $f_{X,Y}(x,y) = f_X(x)f_Y(y)$ for all X,Y
+$X, Y$ independent if $f_{X,Y}(x,y) = f_X(x)f_Y(y)$ for all $X,Y$
 
 
 
-**2-D LOTUS**
+##### 2-D LOTUS
 
-Let (X,Y) have joint PDF f(x,y)
+Let $(X,Y)$ have joint PDF $f(x,y)$
 
-and let g(x, y) be a real-valued fn of x,y
+and let $g(x, y)$ be a real-valued fn of $x,y$
 
 Then $Eg(X,Y) = \iint g(x,y)f(x,y)dxdy$ 
 
-Theorm
 
-IF X,Y are indep, then E(XY) = E(X)E(Y)
 
-independent implies uncorrelated
+##### Theorm
+
+If $X,Y$ are indep, then $E(XY) = E(X)E(Y)$
+
+**Independent implies uncorrelated**
 
 Proof (continuous case)
 
 $E(XY) = \iint xyf_X(x)f_Y(y)dxdy =  \int yf_Y(y) \int xf_X(x)dxdy = (EX)(EY)$ 
 
-Ex. X, Y i.i.d Unif(0,1) find E|X-Y|
+
+
+**Example**
+
+$X, Y$ i.i.d $Unif(0,1)$ find $E|X-Y|$
 
  LOTUS $\int_0^1 \int_0^1 |x-y|dxdy = \iint_{x>y}(x-y)dxdy + \iint_{x\le y} (y-x)dxdy$ 
 
 $= 2\int_0^1 \int_y^1 (x-y)dxdy = 2\int_0^1 (x^2/2 - yx)|_y^1 dy = 1/3$ 
 
-Let M = max(X,Y)
 
-L = min (X, Y)  (L stand for little and less one not large one)
 
-|X-Y| = M-L
+Let $M = max(X,Y)$
 
-E(M-L) = 1/3
+$L = min (X, Y)$  (L stand for little and less one not large one)
 
-E(M)-E(L) = 1/3
+$|X-Y| = M-L$
 
-E(M+L)= E(X+Y) = E(M)+E(L) = 1
+$E(M-L) = 1/3$
 
-=> E(M) = 2/3, E(L) = 1/3
+$E(M)-E(L) = 1/3$
 
-**Chicken-egg**
+$E(M+L)= E(X+Y) = E(M)+E(L) = 1$
+
+=> $E(M) = 2/3, E(L) = 1/3$
+
+#### Chicken-egg
 
 some hens some hatch some don't hatch, the eggs are independent
 
-N eggs,  $N \sim Pois(\lambda)$, each hatches prob p, indep, Let X = #hatch
+ $N \sim Pois(\lambda)$ eggs, each hatches with prob. p, indep, Let X = #hatch
 
 so $X|N \sim Bin(N,p)$ 
 
- Let Y = # don't hatch, so X + Y = N
+ Let Y = # don't hatch, so $X + Y = N$
 
 Find joint PMF of X,Y
 
@@ -1370,35 +1378,39 @@ $P(X=i, Y=j) = \sum P(X=i, Y=j| N=n)P(N=n) $
 
 $= P(X=i, Y=j|N=i+j)P(N=i+j)$ 
 
-$$ = P(X=i|N=i+j)P(N=i+j) =\frac{(i+j)}{(i!j!)} p^i q^j \frac{e^{-\lambda} \lambda^{i+j}}{(i+j)!} $$  
+$$ = P(X=i|N=i+j)P(N=i+j) =\frac{(i+j)!}{(i!j!)} p^i q^j \frac{e^{-\lambda} \lambda^{i+j}}{(i+j)!} $$  
 
 $ = (e^{\lambda p} \frac{(\lambda p)^i}{i!}) (e^{\lambda q} \frac{(\lambda q)^j}{j!})$ 
 
 => X, Y are indep, $X\sim Pois(\lambda p),  Y\sim Pois(\lambda q)$ 
 
+ More Details: [Chicken and Egg (Probability) Problem](https://matthewhr.wordpress.com/2012/11/23/chicken-and-egg-probability-problem/)
+
 ## Lecture 20
 
-Ex FInd $E|Z_1 - Z_2|$, with Z1, Z2 i.i.d N(0,1)
+**Example**
 
-Therom 
+ Find $E|Z_1 - Z_2|$, with $Z_1, Z_2$ i.i.d $N(0,1)$
+
+**Therom**
 
 $X\sim N(\mu_1, \sigma_1^2), Y\sim N(\mu, \sigma_2^2)$ indep
 
 Then $X+Y \sim N(\mu_1+\mu_2, \sigma_1^2 + \sigma_2^2)$ 
 
-Proof 
+**Proof** 
 
-Use MGF, MGF of X+Y is 
+Use MGF, MGF of $X+Y$ is 
 
  $$e^{\mu_1t +\frac{1}{2} \sigma_1^2 t^2}  e^{\mu_2t +\frac{1}{2} \sigma_2^2 t^2}$$ 
 
-Note Z1 Z2 ~ N(0, 2)
+Note $Z_1, Z_2 \sim N(0, 2)$
 
-$E|Z1-Z2| = E|\sqrt{2} Z|$ Z~N(0, 1)
+$E|Z_1-Z_2| = E|\sqrt{2} Z|$  $Z\sim N(0, 1)$
 
 $= \sqrt{2}E|Z| = \sqrt{2/\pi}$ 
 
-**Multinomial** 
+#### Multinomial多项分布
 
 generalization of binomial
 
@@ -1408,13 +1420,15 @@ $\vec{p} = (p_1,…p_k)$ probability vector$ p_j \ge 0, \sum pj = 1$
 
 $\vec{X}\sim Mult(n, p), X = (X_1, … X_k)$ 
 
-have n objects independent putting into k categories
+**story:** have n objects independent putting into k categories
 
-$P_j = P(category j)$ $X_j$ = #objects in category j
+$P_j = P(category\  j)$ $X_j$ = #objects in category j
 
 Joint PMF $P(X_1 = n_1, ..X_k = n_k) = \frac{n!}{n_1!n_2!…n_k!} P_1^{n_1} P_2^{n_2}...P_k^{n_k} $ 
 
 if$n_1 +..+ n_k  = 1$; 0 otherwise
+
+
 
 $\vec{X}\sim Mult(n,p)$  Find marginal dist of  $X_j$ Then $X_j \sim Bin(n, p_j) $ 
 
@@ -1422,13 +1436,13 @@ $\vec{X}\sim Mult(n,p)$  Find marginal dist of  $X_j$ Then $X_j \sim Bin(n, p_j)
 
 $E(X_j) = np_j, Var(X_j)= np_j(1-p_j)$
 
-**Lumping Property**
+##### Lumping Property
 
 Merge category together
 
-$\vec{X} = (X_1, … X_10) \sim Mult(n, (p_1,…p_10))$ 
+$\vec{X} = (X_1, … X_{10}) \sim Mult(n, (p_1,…p_{10}))$ 
 
-ten political parties, take n people , ask people which party they in 
+**Story:** ten political parties, take n people , ask people which party they in 
 
 $\vec{Y} = (X_1, X_2, X_3 + ..+ X_{10})$  Then $Y \sim Mult(n, (p_1, p_2,p_3+..+p_{10}))$
 
@@ -1446,17 +1460,17 @@ with $p'_2$ = P(being in category 2| not in category 1)
 
 $$p'_j = \frac{p_j}{p_2+…p_k}$$  
 
-**Cauchy Interview Problem**
+#### Cauchy Interview Problem
 
-The Cauchy is dist. of T = X/Y with X, Y i.i.d N(0,1)
+The Cauchy is dist. of $T = X/Y$ with $X, Y$ i.i.d $N(0,1)$
 
 Find PDF of T
 
 (doesn't have a mean and variance)
 
-average of million cauchy is still cauchy
+**average of million cauchy is still cauchy**
 
-$P(\frac{X}{Y} \le t) = P(\frac{X}{|Y|} \le t)$  symmetry of N(0.1)
+$P(\frac{X}{Y} \le t) = P(\frac{X}{|Y|} \le t)$  symmetry of $N(0,1)$
 
 $= P(X\le t|Y|) = \frac{1}{\sqrt{2\pi}} \int_{\infty}^{\infty} e^{y^2 /2} \int_{-\infty}^{t|y|} \frac{1}{\sqrt{2\pi}} e^{x^2 /2}  dxdy $ 
 
@@ -1472,19 +1486,23 @@ $= \int \Phi(t|y|)\varphi(y)dy$
 
 ## Lecture 21
 
-Define $Cov(X,Y)= E((X-EX)(Y-EY))$ 
+#### Covariance协方差
+
+##### Definition
+
+ $Cov(X,Y)= E((X-EX)(Y-EY))$ 
 
 $= E(XY) - E(X)E(Y)$ 
 
-since =E(XY)-E(X)E(Y) - E(X)E(Y) + E(X)E(Y)
+since $=E(XY)-E(X)E(Y) - E(X)E(Y) + E(X)E(Y)$
 
-Property 
+##### Property 
 
 1. $Cov(X,X) = Var(X)$
 
 2. $Cov(X,Y) = Cov(Y,X)$ 
 
-3. $Cov(X,c) = 0$, if c is const.
+3. $Cov(X,c) = 0$, if $c$ is const.
 
 4. $Cov(cX,Y) = cCov(X,Y)$  
 
@@ -1501,14 +1519,15 @@ Property
    $Var(X_1+…+ X_n) = Var(X_1)+..+ Var(X_n) + 2\sum_{i<j} Cov(X_i,X_j)$  
 
 
+##### Therom
 
-Therom 
-
-If X, Y are independent then they're uncorrelated i.e Cov(X,Y) = 0
+If $X, Y$ are independent then they're uncorrelated i.e $Cov(X,Y) = 0$
 
 Converse is false(common mistake) 
 
-e.g. $Z\sim N(0.1)$ 
+**Example**
+
+ $Z\sim N(0.1)$ 
 
 $X=Z, Y=Z^2, Cov(X,Y) = E(XY) - E(X)E(Y) = E(Z^3) - E(Z)E(Z^2) = 0$
 
@@ -1516,13 +1535,17 @@ but very dependent: Y is a function of X, (we know X then we know Y)
 
 Y determines magnituide of X
 
-Define $Corr(X,Y) = \frac{Cov(X,Y)}{SD(X)SD(Y)} = Cov(\frac{X-EX}{SD(X)}, \frac{Y-EY}{SD(Y)})$ 
+#### Correlation相关系数
 
-Therom 
+##### Definition
+
+ $Corr(X,Y) = \frac{Cov(X,Y)}{SD(X)SD(Y)} = Cov(\frac{X-EX}{SD(X)}, \frac{Y-EY}{SD(Y)})$ 
+
+##### Therom 
 
 $-1 \le Corr \le 1$  (form of Cauchy-schwarz)
 
-Proof 
+###### Proof
 
 WLOG  assume X,Y are standardized  let $Corr(X,Y) = \rho$
 
@@ -1532,39 +1555,45 @@ $0 \le Var(X-Y) = Var(X) + Var(Y) - 2Cov(X,Y) = 2 - 2\rho$
 
 = > $0 \le \rho \le 1$ 
 
-Ex. Cov in a Multinomial 
+##### Example
 
-(X_1, … X_k) \sim Mult(n, \vec{p})
+Cov in a Multinomial 
 
-Find Cov(X_i, X_j) for all i,j
+$(X_1, … X_k) \sim Multi(n, \vec{p})$
 
-If i=j, $Cov(X_i, X_i) = Var(X_i) = np_i(1-p_i)$
+Find $Cov(X_i, X_j)$ for all $i,j$
+
+If $i=j$, $Cov(X_i, X_i) = Var(X_i) = np_i(1-p_i)$
 
 Now let $i \ne j$
 
-fiind Cov(X_1, X_2) = c, 
+find $Cov(X_1, X_2) = c$, 
 
 $Var(X_1 + X_2) = np_1(1-p_1) + np_2(1-p_2) + 2c$
 
-$= n(p_1+p_2)(1-(p_1+p_2))$ => c = -np_1p_2
+$= n(p_1+p_2)(1-(p_1+p_2))$ => $c = -np_1p_2$
 
-General: $Cov(X_i, X_j) = -np_ip_j, for i\ne j$
+General: $Cov(X_i, X_j) = -np_ip_j, for\ i\ne j$
 
-Ex. X\sim Bin(n,p), write as X=X_1+…X_n  X_j are i.i.d Bern(p)
+##### Example
+
+ $X\sim Bin(n,p)$, write as $X=X_1+…X_n$,  $X_j$ are i.i.d Bern(p)
 
 $Var X_j = EX_j^2 - (EX_j)^2 = p - p^2 = p(1-p)=pq$
 
- Let I_A be indicator r.v. of event A 
+ Let $I_A$ be indicator r.v. of event A 
 
 $I_A^2 = I_A, I_A^3 = I_A$
 
 $I_AI_B = I_{A\cap B}$
 
-VarX = npq since Cov(X_i,X_j) = 0
+$VarX = npq$ since $Cov(X_i,X_j) = 0$
 
-Ex. $X\sim HGeom(w, b, n)$  
+##### Example
 
-X = X_1 + ..X_n, X_j = 1 if jth ball is white; 0 otherwise
+ $X\sim HGeom(w, b, n)$  
+
+$X = X_1 + ..X_n$, $X_j = 1$ if $j$th ball is white; 0 otherwise
 
 symmetry 
 
