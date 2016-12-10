@@ -1739,7 +1739,7 @@ $P(X=k) = \int_0^1 P(X=k|p)f(p)dp$  f(p) = 1
 
 $= \int_0^1  \binom{n}{k}p^k(1-p)^{n-k}  = 1/(n+1)$ 
 
-
+ 
 
 ## Lecture 25
 
