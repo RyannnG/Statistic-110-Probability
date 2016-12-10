@@ -1739,48 +1739,6 @@ $P(X=k) = \int_0^1 P(X=k|p)f(p)dp$  f(p) = 1
 
 $= \int_0^1  \binom{n}{k}p^k(1-p)^{n-k}  = 1/(n+1)$ 
 
- 
-
-**Stat 123: Applied ~~Quant Finance~~ Financial deriavative  on Wall Street**
-
-$S_T $  r.v 
-
-$g(S_T)$
-
-$E(g(S_T))$  
-
-**foreign exchange - FX**
-
-Now:  one euro worth one dollar
-
-1/2 worth more  1.25 $
-
-1/2 worth less 0.8$
-
-E(euro in a year) = $ 1.025 so  \$1 = euro 0.9756
-
-E($) = euro 1.025
-
-**TARP** 
-
-warrants = Call option
-
-US Govt paid $450mm to GS, 
-
-US had right to buy \$10m GS shares for $ 125 in 10 years time 
-
-Oct 2008 , GS shares trade  $95 
-
-If in 10 years time , GS $150, option worth \$ 25
-
-GS $100, 0
-
-k = $ 125
-
-For call option g(S_T) = max{S_T- k, 0}
-
-prices = $\int max\{S_T- k, 0\}f(S_T)dS_T$ 
-
 
 
 ## Lecture 25
