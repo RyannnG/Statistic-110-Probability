@@ -1605,9 +1605,9 @@ $Cov(X_1, X_2) = E(X_1X_2) - E(X_1)E(X_2) = \frac{w}{w+b} (\frac{w-1}{w+b-1}) - 
 
 ## Lecture 22
 
-Var of Hypergeom(w,b,n),
+#### Variance of Hypergeom(w,b,n),
 
-p = w/(w+b),  w+b = N
+$p = w/(w+b),  w+b = N$
 
 $Var(X) = nVar(X_1) + 2\binom{n}{2}Cov(X_1, X_2)$ 
 
@@ -1619,11 +1619,13 @@ Extreme case n= 1, N much much larger than n
 
 Transformations 
 
-Therom Let X be a continous  r.v with PDG f_X, Y = g(X)
+Therom
 
-where g is different, **strictly increaing**. Then the PDF of Y is given by
+Let $X$ be a continous  r.v with PDG $f_{X, Y} = g(X)$
 
-$ f_Y(y) = f_X(x)dx/dy$ where y = g(x), $x =g^{-1}(y)$
+where $g$ is differentiable, **strictly increaing**. Then the PDF of $Y$ is given by
+
+$ f_Y(y) = f_X(x)dx/dy$ where $y = g(x)$, $x =g^{-1}(y)$
 
 and this is written in terms of y
 
@@ -1635,33 +1637,37 @@ CDF of Y is $P(Y\le y) = P(g(X) \le y)$
 
 $= P(X\le g^{-1}(y)) = F_X(g^{-1}(y))h = F_X(x)$
 
- => f_Y(y) = f_X(x)dx/dy  [chain rule]
+ => $f_Y(y) = f_X(x)\frac{dx}{dy}$  [chain rule]
 
 Ex. Log normal   $Y = e^Z, Z\sim N(0,1)$
 
-dy/dZ = e^Z= y
+$\frac{dy}{dZ} = e^Z= y$
 
 f_Y = 
 
-Transfomations in multi dimension 
+Transfomations in multi dimensions 
 
 $\vec{Y} = g(\vec{X})$  
 
-X = (X_1,…X_n) continuous
+$X = (X_1,\dots X_n)$ continuous
 
-joint PDF of Y is f_Y(y) = f_X(x) |dx/dy | 
+joint PDF of Y is $f_Y(y) = f_X(x) |dx/dy | $
 
 $|d\vec{x}/d\vec{y} |$ Jacobian  abs of value of determinant
 
 $|dy/dx|^{-1}$    
 
-**Convolution** (sums)
+### Convolution (sums)
 
-let T = X+Y, X,Y indep
+Let $T = X+Y$, $X,Y$ indep.
 
-discrete : $P(T=t) = \sum_{x} P(X=x)P(Y = t-x)$
+#### Discrete :
 
-continuous $f_T(t) = \int f_Xf(x)f_Y(t-x)dx$ 
+ $P(T=t) = \sum_{x} P(X=x)P(Y = t-x)$
+
+#### Continuous
+
+ $f_T(t) = \int f_Xf(x)f_Y(t-x)dx$ 
 
 since $F_Y(t) = P(T\le t) = \int P(X+Y\le t|X=x)f_X(x)dx$
 
@@ -1673,13 +1679,15 @@ Show P(A) >0 for a random object .
 
 Suppose each object has a "score" . Show there is an object with "good" score. there is an object with score is at least E(X) (X score of random object)
 
-Ex. suppose 100 people , 15 committees of 20 , each persom is on 3 committee, show there exist 2 committee with overlap $\ge$ 3    
+Example
+
+Suppose 100 people , 15 committees of 20 , each person is on 3 committee, show there exist 2 committee with overlap $\ge$ 3    
 
 Idea: find average overlap of 2 random committee
 
-E(overlap) = 100 \frac{\binom{3}{2}}{\binom{15}{2}} = 20 / 7
+$E(overlap) = 100 \frac{\binom{3}{2}}{\binom{15}{2}} = 20 / 7$
 
-=> there exists pair of committee with overlap of \ge 20/7 => have overlap of \ge 3
+=> there exists pair of committee with overlap of $\ge 20/7$ => have overlap of $\ge 3$
 
 ## Lecture 23
 
